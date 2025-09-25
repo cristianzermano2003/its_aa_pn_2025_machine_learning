@@ -1,0 +1,46 @@
+# Elixir: first steps
+
+## Variables and flow of execution
+
+Elixir ti permette di giocare LIVE con se stesso
+
+```elixir
+a = 5
+b = 9
+
+a+b
+```
+
+Baby steps into Elixir:
+
+1. Modules
+2. Functions
+
+```elixir
+defmodule Hello do
+  def world() do
+    "Hello, world!"
+  end
+end
+```
+
+```elixir
+Hello.world()
+```
+
+How to iterate?
+
+```elixir
+require Integer
+
+list = [1,2,3,4,5,6,7,8,9,0]
+even_only = Enum.filter(list, fn element -> Integer.is_even(element) end)
+Enum.map(even_only, fn element -> element*element end)
+```
+
+```elixir
+[1,2,3,4,5,6,7,8,9,0]
+|> Enum.filter(&Integer.is_even/1)
+|> Enum.map(fn element -> element*element end)
+|> Enum.sum()
+```
