@@ -1,0 +1,73 @@
+# ML training 101
+
+```elixir
+Mix.install([
+  {:nx, "~> 0.10.0"},
+  {:tucan, "~> 0.5.0"},
+  {:kino_vega_lite, "~> 0.1.9"},
+  {:kino, "~> 0.10.0"},
+  {:kino_explorer, "~> 0.1.7"},
+  {:explorer, "~> 0.11.1"},
+  {:scholar, "~> 0.2.1"}
+])
+```
+
+## Definitions and setup
+
+First, we import and require and alias some utilities
+
+```elixir
+require Explorer.DataFrame, as: DF
+require Explorer.Series, as: S
+alias Scholar.Linear.LinearRegression, as: LR
+alias Scholar.Linear.PolynomialRegression, as: PR
+alias Scholar.Impute.SimpleImputer
+alias Scholar.Metrics.Regression
+```
+
+Then, let's define a module that "represents the truth".
+
+This is obviously not possible in a real-world scenario.
+The following is here for educational purposes.
+
+```elixir
+defmodule Data do
+  import Nx.Defn
+
+  @n 50
+
+  @a -0.000_005
+  @b -0.150
+  @c 125_000
+
+  @miles_min 10_000
+  @miles_max 120_000
+  @noise_mean 10_000
+  @noise_deviation 3_000
+
+  defn data do
+    key = Nx.Random.key(42069)
+    {x, new_key} = Nx.Random.uniform(key, @miles_min, @miles_max, shape: {@n, 1}, type: :f64)
+    {noise, _} = Nx.Random.normal(new_key, @noise_mean, @noise_deviation, shape: {@n, 1})
+    y = @a * x ** 2 + @b * x + @c + noise
+    {x, y}
+  end
+end
+
+{mileage, prices} = Data.data()
+
+
+Tucan.scatter([x: mileage, y: prices], "x", "y", width: 630, height: 630, filled: true)
+|> Tucan.Grid.set_enabled(false)
+|> Tucan.set_title("Scatterplot of Generated Data", offset: 20)
+```
+
+TODO
+
+```elixir
+
+```
+
+```elixir
+
+```
