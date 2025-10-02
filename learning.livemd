@@ -40,13 +40,13 @@ defmodule Data do
   @b -0.150
   @c 125_000
 
-  @miles_min 10_000
-  @miles_max 120_000
+  @miles_min 1_000
+  @miles_max 150_000
   @noise_mean 10_000
   @noise_deviation 3_000
 
   defn data do
-    key = Nx.Random.key(42069)
+    key = Nx.Random.key(42069)  # choose your own key to start with
     {x, new_key} = Nx.Random.uniform(key, @miles_min, @miles_max, shape: {@n, 1}, type: :f64)
     {noise, _} = Nx.Random.normal(new_key, @noise_mean, @noise_deviation, shape: {@n, 1})
     y = @a * x ** 2 + @b * x + @c + noise
@@ -56,16 +56,27 @@ end
 
 {mileage, prices} = Data.data()
 
-Tucan.scatter([mileage: mileage, prices: prices], "mileage", "prices",
-  width: 800,
-  height: 760,
-  filled: true
-)
-|> Tucan.Grid.set_enabled(false)
-|> Tucan.set_title("How prices change wrt mileage", offset: 20)
+data_plot =
+  [mileage: mileage, prices: prices]
+  |> Tucan.scatter("mileage", "prices",
+    width: 800,
+    height: 760,
+    filled: true,
+    point_color: "orange",
+    point_size: 64
+  )
+  |> Tucan.Grid.set_enabled(false)
+  |> Tucan.set_title("How prices change wrt mileage", offset: 20)
 ```
 
-TODO
+Now it's time to try and find the best straight line that "fits" the data.
+
+This is called "linear regression", and it's the ABC of ML, as we've seen in theory.
+Luckily, this time, we don't have to apply stocastic gradient descent, nor anything that complex.
+
+We already have our module and fit function ready-made for us.
+
+First we need to compute `m` and `q`.
 
 ```elixir
 %LR{intercept: intercept, coefficients: coefficients} = model = LR.fit(mileage, prices)
@@ -74,27 +85,43 @@ TODO
 {m,q}
 ```
 
+Okay, now, time to plot this line.
+
+Let's first find two points that pass _through_ the line; this makes the plotting easier.
+
 ```elixir
-x1 = 0
+x1 = 1_000
+x2 = 150_000
 y1 = x1 * m + q
-x2 = 135_000
 y2 = x2 * m + q
 {{x1, y1}, {x2, y2}}
 ```
 
+Okay, now, time to plot that.
+
+It's nice to plot our line *and* the original data, just to check how it fits.
+
+We can easily do that if we overlap the two plots on top of each other.
+
 ```elixir
+line_plot = Tucan.lineplot([x: [x1, x2], y: [y1, y2]], "x", "y")
+
 Tucan.layers([
-  Tucan.scatter([mileage: mileage, prices: prices], "mileage", "prices",
-    width: 800,
-    height: 760,
-    filled: true
-  ),
-  Tucan.lineplot([x: [x1, x2], y: [y1, y2]], "x", "y")
+  data_plot,
+  line_plot
 ])
 ```
 
+Wouldn't it be nice if our model could be *actually* useful for a non-tech or a non-math guy?
+
+For example, here we want to be able to *predict* the prices; therefore we want to enable an employee to input a *new* car into the system, and to predict its price.
+
+We also want to show our employee how that predicted prices fits into the system visually (again, via a plot).
+
+Let's do that.
+
 ```elixir
-input = Kino.Input.text("dammi il chilometraggio")
+input = Kino.Input.text("Please input your mileage here")
 ```
 
 ```elixir
@@ -106,38 +133,67 @@ result = LR.predict(model, Nx.tensor([[kms]]))
 
 IO.puts(predicted)
 
-Tucan.layers([
-  Tucan.scatter([mileage: mileage, prices: prices], "mileage", "prices",
-    width: 800,
-    height: 500,
+predicted_dot =
+  Tucan.scatter([x: [kms], y: [predicted]], "x", "y",
+    point_color: "red",
+    point_size: 240,
     filled: true
-  ),
-  Tucan.lineplot([x: [x1, x2], y: [y1, y2]], "x", "y"),
-  Tucan.scatter([x: [kms], y: [predicted]], "x", "y", point_color: "red", point_size: 100)
+  )
+
+Tucan.layers([
+  data_plot,
+  line_plot,
+  predicted_dot
 ])
 ```
+
+Now, wouldn't it be nice to .. improve our model?
+
+Yes, a linear model could be enough, but what if it isn't?
+
+Later on we'll see how we can be slightly more confident about choosing a model; right now, let's just try and complicate the model, so that it better minimizes the errors.
+
+We already know this can easily lead to overfitting, but let's do that anyways.
+
+First, let's fit.
 
 ```elixir
 %PR{coefficients: pr_coeff, intercept: pr_intercept} =
   pr_model = PR.fit(mileage, prices, degree: 2)
 
-x_p = 0..130_000
+{pr_coeff, pr_intercept}
+```
 
+Then, let's plot the results.
+
+```elixir
 x_vector =
-  x_p
-  |> Enum.map(&Function.identity/1)
+  1_000..150_000
+  # converts to float
+  |> Enum.map(fn element -> element / 1 end)
   |> Nx.tensor()
   |> Nx.reshape({:auto, 1})
 
 y_p = PR.predict(pr_model, x_vector)
 
+parabola_plot = Tucan.lineplot([y: y_p, x: x_vector], "x", "y", line_color: "green")
+
 Tucan.layers([
-  Tucan.scatter([mileage: mileage, prices: prices], "mileage", "prices",
-    width: 800,
-    height: 500,
-    filled: true
-  ),
-  Tucan.lineplot([x: [x1, x2], y: [y1, y2]], "x", "y"),
-  Tucan.lineplot([y: y_p, x: x_vector], "x", "y", line_color: "green")
+  data_plot,
+  line_plot,
+  parabola_plot
 ])
 ```
+
+In all honesty, since in this *dummy* example _we know_ that data is syntetically generated via a quadratic function, probably the quadratic function is the best choice.
+
+What do we take away from this excercise?
+
+1. In the end, models are just mathematical black boxes that gives us a way to predict new data
+2. It's easy, and important, to *visualize* what these models do
+3. We cannot really afford to arbitrarily complicate our models, or else, we'll have overfitting, and as you've probably understood by now, that's bad
+4. But there's more: we cannot afford to *underfit*, either! The right answer is to pick a fairly good model, so that it doesn't underfit _and_ it doesn't overfit.
+
+**But how do we do that?**
+
+Well, that's a whole topic for the next lecture!
