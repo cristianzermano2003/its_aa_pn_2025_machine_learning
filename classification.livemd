@@ -65,10 +65,18 @@ defmodule Data do
   end
 
   defn scale_data(input) do
-    mu = Nx.mean(input, axes: [0])
-    sigma = Nx.standard_deviation(input, axes: [0])
+    mu = mean(input)
+    sigma = std_dev(input)
 
     (input - mu) / sigma
+  end
+
+  defn mean(input) do
+    Nx.mean(input, axes: [0])
+  end
+
+  defn std_dev(input) do
+    Nx.standard_deviation(input, axes: [0])
   end
 end
 
@@ -95,6 +103,8 @@ Just like the other time, we can use our ready-made libraries.
 
 ```elixir
 scaled_features = Data.scale_data(features)
+mu = Data.mean(features) |> IO.inspect()
+sigma = Data.std_dev(features) |> IO.inspect()
 
 %LR{coefficients: coeff, bias: bias} =
   model =
@@ -119,25 +129,26 @@ To obtain a plottable line, we just need to apply some basic math to obtain our 
 Don't worry, it is not required from you to remember, nor even understand the following. If you're curious, tho, I'll happily explain the details.
 
 ```elixir
-w00 = coeff[0][0] |> Nx.to_number()
-w01 = coeff[1][0] |> Nx.to_number()
-w10 = coeff[0][1] |> Nx.to_number()
-w11 = coeff[1][1] |> Nx.to_number()
+IO.inspect(coeff)
+IO.inspect(bias)
 
-b0 = bias[0] |> Nx.to_number()
-b1 = bias[1] |> Nx.to_number()
+a00 = coeff[0][0] |> Nx.to_number() |> IO.inspect()
+a01 = coeff[0][1] |> Nx.to_number() |> IO.inspect()
+a10 = coeff[1][0] |> Nx.to_number() |> IO.inspect()
+a11 = coeff[1][1] |> Nx.to_number() |> IO.inspect()
 
-{w00, w01, w10, w11, b0, b1} |> IO.inspect()
+b0 = bias[0] |> Nx.to_number() |> IO.inspect()
+b1 = bias[1] |> Nx.to_number() |> IO.inspect()
 
-w1 = w10 - w00
-w2 = w01 - w11
+m = (a10 - a00) / (a11 - a01)
+q = (b1 - b0) / (a11 - a01)
 
-b = b0 - b1
+m_orig = -((a10 - a00) / Nx.to_number(sigma[0])) / ((a11 - a01) / Nx.to_number(sigma[1]))
 
-{w1, w2, b} |> IO.inspect()
-
-m = w1 / w2
-q = b / w2
+q_orig =
+  ((a10 - a00) * Nx.to_number(mu[0]) / Nx.to_number(sigma[0]) +
+     (a11 - a01) * Nx.to_number(mu[1]) / Nx.to_number(sigma[1]) - (b1 - b0)) /
+    ((a11 - a01) / Nx.to_number(sigma[1]))
 
 {m, q}
 ```
