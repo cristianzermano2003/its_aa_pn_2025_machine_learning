@@ -1,0 +1,256 @@
+# Classification
+
+```elixir
+Mix.install([
+  {:nx, "~> 0.10.0"},
+  {:tucan, "~> 0.5.0"},
+  {:kino_vega_lite, "~> 0.1.9"},
+  {:kino, "~> 0.10.0"},
+  {:kino_explorer, "~> 0.1.7"},
+  {:explorer, "~> 0.11.1"},
+  {:scholar, "~> 0.2.1"}
+])
+```
+
+## Definitions and setup
+
+First, we import and require and alias some utilities
+
+```elixir
+require Explorer.DataFrame, as: DF
+require Explorer.Series, as: S
+alias Scholar.Linear.LogisticRegression, as: LR
+alias Scholar.Impute.SimpleImputer
+alias Scholar.Metrics.Regression
+```
+
+Then, let's define a module that "represents the truth".
+
+As always, this is synthetic data.
+
+This time, we imagine we want to classify mushrooms; we give a simple `1` etiquette if it's edible. `0`, otherwise.
+
+Our features are, simply, their height and their width.
+
+```elixir
+defmodule Data do
+  import Nx.Defn
+
+  @n 120
+  @g div(@n, 2)
+
+  @x 22.5
+  @std_dev_x 8.91
+  @label_x 0
+
+  @y 47.5
+  @std_dev_y 14.64
+  @label_y 1
+
+  def n(), do: @n
+
+  defn generate_data do
+    key = Nx.Random.key(42069)
+
+    {data_x, key_x} = Nx.Random.normal(key, @x, @std_dev_x, shape: {@g, 2})
+    labels_x = Nx.broadcast(@label_x, {@g})
+
+    {data_y, _} = Nx.Random.normal(key_x, @y, @std_dev_y, shape: {@g, 2})
+    labels_y = Nx.broadcast(@label_y, {@g})
+
+    features = Nx.concatenate([data_x, data_y], axis: 0)
+    labels = Nx.concatenate([labels_x, labels_y], axis: 0)
+
+    {features, labels}
+  end
+
+  defn scale_data(input) do
+    mu = Nx.mean(input, axes: [0])
+    sigma = Nx.standard_deviation(input, axes: [0])
+
+    (input - mu) / sigma
+  end
+end
+
+{features, labels} = Data.generate_data()
+
+x = Nx.slice(features, [0, 0], [Data.n(), 1])
+y = Nx.slice(features, [0, 1], [Data.n(), 1])
+
+data_plot =
+  [x: x, y: y, outcome: labels]
+  |> Tucan.scatter("x", "y",
+    color_by: "outcome",
+    shape_by: "outcome",
+    height: 600,
+    width: 760
+  )
+```
+
+Now it's time to try and find the best straight line that "separates" the data.
+
+This is called "logistic regression". Note: `logistic`, not `linear`.
+
+Just like the other time, we can use our ready-made libraries.
+
+```elixir
+scaled_features = Data.scale_data(features)
+
+%LR{coefficients: coeff, bias: bias} =
+  model =
+  LR.fit(
+    scaled_features,
+    labels,
+    num_classes: 2
+  )
+```
+
+Now, this might look weird at first.
+
+We have a lot of number to work with! Shouldn't a linear model just return us `m` and `q`?
+
+We receive a matrix for two reasons:
+
+1. The algorithm implemented by `LR` is a general-purpose one, and it's made to potentially work on any `n`-dimensional inputs, therefore an `m`-dimensional output makes sense
+2. Even if our problem looks `2D`, it's actually "kind-of" `3D`: we have two inputs (`x` and `y`) that maps to a `color` (in other words, a `z`)
+
+To obtain a plottable line, we just need to apply some basic math to obtain our coefficients.
+
+Don't worry, it is not required from you to remember, nor even understand the following. If you're curious, tho, I'll happily explain the details.
+
+```elixir
+w00 = coeff[0][0] |> Nx.to_number()
+w01 = coeff[1][0] |> Nx.to_number()
+w10 = coeff[0][1] |> Nx.to_number()
+w11 = coeff[1][1] |> Nx.to_number()
+
+b0 = bias[0] |> Nx.to_number()
+b1 = bias[1] |> Nx.to_number()
+
+{w00, w01, w10, w11, b0, b1} |> IO.inspect()
+
+w1 = w10 - w00
+w2 = w01 - w11
+
+b = b0 - b1
+
+{w1, w2, b} |> IO.inspect()
+
+m = w1 / w2
+q = b / w2
+
+{m, q}
+```
+
+Okay, now, time to plot this line.
+
+Let's first find two points that pass _through_ the line; this makes the plotting easier.
+
+```elixir
+x1 = -10
+x2 = 95
+y1 = x1 * m + q
+y2 = x2 * m + q
+{{x1, y1}, {x2, y2}}
+```
+
+Okay, now, time to plot that.
+
+It's nice to plot our line *and* the original data, just to check how it fits.
+
+We can easily do that if we overlap the two plots on top of each other.
+
+```elixir
+line_plot = Tucan.lineplot([x: [x1, x2], y: [y1, y2]], "x", "y")
+
+Tucan.layers([
+  data_plot,
+  line_plot
+])
+```
+
+Wouldn't it be nice if our model could be *actually* useful for a non-tech or a non-math guy?
+
+For example, here we want to be able to *predict* the prices; therefore we want to enable an employee to input a *new* car into the system, and to predict its price.
+
+We also want to show our employee how that predicted prices fits into the system visually (again, via a plot).
+
+Let's do that.
+
+```elixir
+input = Kino.Input.text("Please input your mileage here")
+```
+
+```elixir
+i = Kino.Input.read(input)
+{kms, _} = Integer.parse(i)
+
+result = LR.predict(model, Nx.tensor([[kms]]))
+[predicted] = Nx.to_flat_list(result)
+
+IO.puts(predicted)
+
+predicted_dot =
+  Tucan.scatter([x: [kms], y: [predicted]], "x", "y",
+    point_color: "red",
+    point_size: 240,
+    filled: true
+  )
+
+Tucan.layers([
+  data_plot,
+  line_plot,
+  predicted_dot
+])
+```
+
+Now, wouldn't it be nice to .. improve our model?
+
+Yes, a linear model could be enough, but what if it isn't?
+
+Later on we'll see how we can be slightly more confident about choosing a model; right now, let's just try and complicate the model, so that it better minimizes the errors.
+
+We already know this can easily lead to overfitting, but let's do that anyways.
+
+First, let's fit.
+
+```elixir
+%PR{coefficients: pr_coeff, intercept: pr_intercept} =
+  pr_model = PR.fit(mileage, prices, degree: 2)
+
+{pr_coeff, pr_intercept}
+```
+
+Then, let's plot the results.
+
+```elixir
+x_vector =
+  1_000..150_000
+  # converts to float
+  |> Enum.map(fn element -> element / 1 end)
+  |> Nx.tensor()
+  |> Nx.reshape({:auto, 1})
+
+y_p = PR.predict(pr_model, x_vector)
+
+parabola_plot = Tucan.lineplot([y: y_p, x: x_vector], "x", "y", line_color: "green")
+
+Tucan.layers([
+  data_plot,
+  line_plot,
+  parabola_plot
+])
+```
+
+In all honesty, since in this *dummy* example _we know_ that data is syntetically generated via a quadratic function, probably the quadratic function is the best choice.
+
+What do we take away from this excercise?
+
+1. In the end, models are just mathematical black boxes that gives us a way to predict new data
+2. It's easy, and important, to *visualize* what these models do
+3. We cannot really afford to arbitrarily complicate our models, or else, we'll have overfitting, and as you've probably understood by now, that's bad
+4. But there's more: we cannot afford to *underfit*, either! The right answer is to pick a fairly good model, so that it doesn't underfit _and_ it doesn't overfit.
+
+**But how do we do that?**
+
+Well, that's a whole topic for the next lecture!
