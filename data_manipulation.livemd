@@ -164,14 +164,6 @@ Let's imagine we have a list of maps representing user purchase data.
 
 Our goal is to filter for active users and calculate a new feature: the number of days since their last purchase.
 
-#### TODO:
-
-1. Filter out data with missing fields
-2. Compute `days_since_last_purchase`
-3. Filter out inactive users (meaning: `days_since_last_purchase` farther than 120 days)
-4. Sort by `last_purchase_at`
-5. Find the youngest
-
 ```elixir
 raw_data = [
   %{user_id: 1, age: 25, last_purchase_at: nil},
@@ -193,7 +185,27 @@ raw_data = [
   %{user_id: 17, age: nil, last_purchase_at: ~D[2024-08-20]},
   %{user_id: 18, age: 28, last_purchase_at: ~D[2025-06-29]},
   %{user_id: 19, age: 18, last_purchase_at: ~D[2025-05-19]},
-  %{user_id: 10, age: nil, last_purchase_at: ~D[2025-09-11]}
+  %{user_id: 20, age: nil, last_purchase_at: ~D[2025-09-11]},
+  %{user_id: 21, age: 25, last_purchase_at: nil},
+  %{user_id: 20, age: nil, last_purchase_at: ~D[2025-07-11]},
+  %{user_id: 22, age: nil, last_purchase_at: ~D[2025-11-01]},
+  %{user_id: 23, age: 18, last_purchase_at: ~D[2025-09-20]},
+  %{user_id: 24, age: 35, last_purchase_at: ~D[2025-10-12]},
+  %{user_id: 25, age: 61, last_purchase_at: ~D[2025-01-16]},
+  %{user_id: 26, age: 62, last_purchase_at: nil},
+  %{user_id: 27, age: nil, last_purchase_at: ~D[2024-08-20]},
+  %{user_id: 28, age: 88, last_purchase_at: ~D[2025-07-18]},
+  %{user_id: 29, age: 29, last_purchase_at: ~D[2025-04-29]},
+  %{user_id: 30, age: nil, last_purchase_at: ~D[2025-12-11]},
+  %{user_id: 31, age: nil, last_purchase_at: ~D[2025-01-11]},
+  %{user_id: 32, age: nil, last_purchase_at: ~D[2025-05-31]},
+  %{user_id: 33, age: 37, last_purchase_at: ~D[2025-05-21]},
+  %{user_id: 34, age: 20, last_purchase_at: nil},
+  %{user_id: 35, age: 19, last_purchase_at: nil},
+  %{user_id: 36, age: 47, last_purchase_at: ~D[2024-12-23]},
+  %{user_id: 37, age: nil, last_purchase_at: ~D[2024-12-20]},
+  %{user_id: 38, age: 39, last_purchase_at: ~D[2025-08-29]},
+  %{user_id: 39, age: 46, last_purchase_at: ~D[2025-08-19]}
 ]
 
 today = Date.utc_today()
@@ -201,6 +213,16 @@ today = Date.utc_today()
 # TODO here
 ```
 
-```
+#### TODO:
 
+1. Filter out data with missing fields
+2. Filter out data with invalid fields (e.g. future dates)
+3. Compute `days_since_last_purchase`
+4. Filter out inactive users (meaning: `days_since_last_purchase` farther than 120 days)
+5. Sort by `last_purchase_at`, and when equal, put the youngest first
+6. Find the youngest
+7. **Bonus**: organize your code using a Module
+
+```elixir
+# TODO
 ```
