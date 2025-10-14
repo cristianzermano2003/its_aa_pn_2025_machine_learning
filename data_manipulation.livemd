@@ -114,7 +114,9 @@ Did you know that all of the above can be written with... just a few lines?
 ```
 
 ### Exercise 1: basic ops on lists
+
 Use the List module functions to solve the following:
+
 1. Find the first element of numbers.
 2. Find the last element of numbers.
 3. Delete the element at index 2 (which is 3) from numbers.
@@ -139,15 +141,18 @@ IO.puts("List without 3: #{inspect(list_without_3)}")
 ### Exercise 2: maps
 
 Maps are Elixir's hash tables. They store data in key-value pairs.
+
 * Maps are efficient for lookup, insertion, and deletion by key (O(1) average).
 * Keys can be any Elixir term, but atoms are the most common and efficient choice for map keys, especially when you know the keys beforehand.
 
 Syntax for Maps
+
 * Maps are created with %{}, e.g., %{key1: value1, key2: value2}.
 * When all keys are atoms, you can use the shortcut access syntax: map.key.
 * The Map module provides functions for safe access and manipulation.
 
 Now:
+
 1. Create a map named person with the atom keys :name and :occupation.
 2. Access the occupation using the map.key syntax.
 3. Use `Map.fetch!/2` to safely retrieve the value associated with the :name key.
@@ -217,4 +222,7 @@ today = Date.utc_today()
 
 # TODO here
 ```
-````
+
+```
+
+```
