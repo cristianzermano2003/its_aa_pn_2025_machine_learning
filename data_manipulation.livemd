@@ -224,5 +224,39 @@ today = Date.utc_today()
 7. **Bonus**: organize your code using a Module
 
 ```elixir
-# TODO
+defmodule Utils do
+  def has_required_fields?(%{age: age, last_purchase_at: last_purchase_at})
+      when not is_nil(age) and not is_nil(last_purchase_at), do: true
+  def has_required_fields?(_), do: false
+
+  def date_not_in_future?(%Date{} = date) do
+    Date.compare(date, Date.utc_today()) != :gt
+  end
+  def date_not_in_future?(_), do: true
+
+  def days_since_last_purchase(%{last_purchase_at: %Date{} = date}) do
+    Date.diff(Date.utc_today(), date)
+  end
+  def days_since_last_purchase(_), do: nil
+end
+
+raw_data
+|> Enum.filter(&Utils.has_required_fields?/1)
+|> Enum.filter(fn %{last_purchase_at: date} -> Utils.date_not_in_future?(date) end)
+|> Enum.map(fn entry ->
+    days = Utils.days_since_last_purchase(entry)
+    Map.put(entry, :days_since_last_purchase, days)
+  end)
+|> Enum.filter(fn %{days_since_last_purchase: days} ->
+    is_integer(days) and days <= 120
+  end)
+|> Enum.sort(fn
+  %{last_purchase_at: date1, age: age1}, %{last_purchase_at: date2, age: age2} ->
+    case Date.compare(date1, date2) do
+      :lt -> true
+      :gt -> false
+      :eq -> age1 < age2
+    end
+end)
+|> Enum.min_by(& &1.age)
 ```
