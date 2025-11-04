@@ -1,0 +1,2347 @@
+[
+    {
+        "question": "According to the text, what is a vector?",
+        "options": [
+            "A grid of numbers, like a spreadsheet",
+            "A cluster of common information that describes a single point of data",
+            "A mathematical operation that tells how aligned two points are",
+            "The rate of change of a function at a given point"
+        ],
+        "correct_answer": "A cluster of common information that describes a single point of data",
+        "motivation": "The source material defines a vector as a 'cluster of common information that describes a single point of data,' using the example of a student's attributes [19, 12, 88]. A grid of numbers is a matrix, an operation for alignment is a dot product, and the rate of change is a derivative."
+    },
+    {
+        "question": "What does a large, positive dot product between two vectors indicate?",
+        "options": [
+            "The vectors are unrelated and geometrically perpendicular",
+            "The vectors point in opposite directions and contrast each other",
+            "The vectors point in a similar direction",
+            "The vectors represent a spreadsheet of data"
+        ],
+        "correct_answer": "The vectors point in a similar direction",
+        "motivation": "The text states, 'a large, positive, dot product means the vectors point in a similar direction.' A value near zero means they are unrelated (perpendicular), and a large negative value means they point in opposite directions."
+    },
+    {
+        "question": "What is a matrix defined as in the source material?",
+        "options": [
+            "A list of numbers describing a single student",
+            "A fundamental operation that tells us how aligned two vectors are",
+            "A grid of numbers, like a spreadsheet, often representing a collection of data points",
+            "The multi-dimensional version of a derivative"
+        ],
+        "correct_answer": "A grid of numbers, like a spreadsheet, often representing a collection of data points",
+        "motivation": "The text explains that if you stack multiple vectors (like data for 100 students) together, you get a grid of numbers, which 'in math, is called a matrix.' It is compared to a spreadsheet."
+    },
+    {
+        "question": "In the context of calculus for ML, what does a derivative, `f'(x)`, tell you?",
+        "options": [
+            "The direction of the steepest ascent for a multi-dimensional function",
+            "The average value of a dataset",
+            "The rate of change or 'trend' of a function at any given point",
+            "How aligned two vectors are"
+        ],
+        "correct_answer": "The rate of change or 'trend' of a function at any given point",
+        "motivation": "The source material defines the derivative `f'(x)` as telling you the function's 'rate of change at any given point (geometrically, that’s simply its *slope*).' This helps understand the function's 'trend'."
+    },
+    {
+        "question": "What is the gradient (`∇f`) described as in the text?",
+        "options": [
+            "A function used to model errors as a 'hilly landscape'",
+            "The multi-dimensional version of a derivative",
+            "A collection of data points in a grid",
+            "A process that starts at a random point and steps downhill"
+        ],
+        "correct_answer": "The multi-dimensional version of a derivative",
+        "motivation": "The text explicitly states that the gradient, `∇f`, 'is the multi-dimensional version of a derivative.' It points in the direction of the steepest ascent."
+    },
+    {
+        "question": "In machine learning, what is the primary goal of optimization?",
+        "options": [
+            "To find the average and spread of the data",
+            "To stack vectors into a matrix",
+            "To minimize errors and maximize results",
+            "To ensure a system is deterministic"
+        ],
+        "correct_answer": "To minimize errors and maximize results",
+        "motivation": "The text describes optimization using the 'min-maxing' concept: 'We want to minimize the errors, *and* maximize results.' This is a core problem that optimization as a field addresses."
+    },
+    {
+        "question": "What is a 'loss function' in the context of ML optimization?",
+        "options": [
+            "A function that models the 'hilly landscape' of errors",
+            "A function that calculates the dot product of two vectors",
+            "The algorithm used to find the minimum error",
+            "A function that represents the 'ground truth'"
+        ],
+        "correct_answer": "A function that models the 'hilly landscape' of errors",
+        "motivation": "The text explains that to find the lowest valley (minimum error), 'we could model our errors as a function of that “hilly landscape”; we call such function a *loss function*.'"
+    },
+    {
+        "question": "What is the core idea of the Stochastic Gradient Descent algorithm?",
+        "options": [
+            "To analytically compute the exact optimal solution",
+            "To take a small step in the direction of the gradient (uphill)",
+            "To start at a random point, calculate the gradient, and take a small step in the opposite direction (downhill)",
+            "To perfectly fit a model to every single data point in the training set"
+        ],
+        "correct_answer": "To start at a random point, calculate the gradient, and take a small step in the opposite direction (downhill)",
+        "motivation": "The text outlines the Stochastic Gradient Descent algorithm as: 1. start at a random point, 2. calculate the gradient, and 3. take a small step in the *opposite* direction (downhill). This is repeated iteratively."
+    },
+    {
+        "question": "Which statistical measure is described as 'robust to outliers'?",
+        "options": [
+            "Mean",
+            "Median",
+            "Variance",
+            "Standard Deviation"
+        ],
+        "correct_answer": "Median",
+        "motivation": "The source material defines the 'Median' as 'The middle value when the data is sorted. More robust to outliers.' The Mean, in contrast, is 'Prone to being skewed by outliers.'"
+    },
+    {
+        "question": "What is the key characteristic of a stochastic system?",
+        "options": [
+            "The output is perfectly predictable from the input",
+            "The same input always leads to the same output",
+            "There is inherent randomness, and the same input can lead to different outputs",
+            "It represents the 'ground truth' mapping"
+        ],
+        "correct_answer": "There is inherent randomness, and the same input can lead to different outputs",
+        "motivation": "The text defines stochastic systems as having 'inherent randomness' where the 'same input can lead to different outputs.' In contrast, deterministic systems are perfectly predictable."
+    },
+    {
+        "question": "What core feature of Elixir programming is highlighted in the text?",
+        "options": [
+            "It uses classical 'loops' for iteration",
+            "It has no mutability, meaning variables can only be reassigned, not changed",
+            "It is primarily used for statistical analysis",
+            "It is a deterministic systems language"
+        ],
+        "correct_answer": "It has no mutability, meaning variables can only be reassigned, not changed",
+        "motivation": "The source states, 'Elixir has no *mutability*, meaning: you can’t really *change* variables, only *reassign* them.' It also notes that this is why it relies on recursion instead of classical loops."
+    },
+    {
+        "question": "What is the 'paradigm shift' of Machine Learning compared to Traditional Programming?",
+        "options": [
+            "In ML, the programmer figures out all the rules explicitly",
+            "In ML, the computer is provided with data and figures out the rules on its own",
+            "In ML, the goal is to create deterministic systems",
+            "In ML, programs are written in functional languages like Elixir"
+        ],
+        "correct_answer": "In ML, the computer is provided with data and figures out the rules on its own",
+        "motivation": "The text contrasts Traditional Programming, where 'The programmer figures out the rules,' with Machine Learning, where 'we provide the computer with data... The computer then figures out the rules on its own.'"
+    },
+    {
+        "question": "What does 'PAC' stand for in the context of ML models?",
+        "options": [
+            "Programming and Calculus",
+            "Pattern, Algorithm, Compute",
+            "Probably Approximately Correct",
+            "Prediction, Accuracy, Classification"
+        ],
+        "correct_answer": "Probably Approximately Correct",
+        "motivation": "The text introduces 'Probably Approximately Correct (PAC) models' as algorithms that 'work with high probability' and whose output 'might not be optimal,' combining 'approximately correct' heuristics with 'randomized' steps."
+    },
+    {
+        "question": "In the formal definition of machine learning, what is the 'prediction rule' or 'model'?",
+        "options": [
+            "The set of all possible objects, `X`",
+            "The set of all possible labels, `Y`",
+            "The set of training data, `S`",
+            "A function `h: X→Y` that predicts a label for a given object"
+        ],
+        "correct_answer": "A function `h: X→Y` that predicts a label for a given object",
+        "motivation": "The text states, 'A learner output is a prediction rule... a function that, given an object, tries to *predict* a... label.' It is mathematically written as `h: X→Y` and is called the ML model."
+    },
+    {
+        "question": "What is the 'empirical error'?",
+        "options": [
+            "The 'ground truth' error, which is impossible to compute",
+            "The error of the prediction rule `h` computed on the training set `S`",
+            "An error in the Elixir code",
+            "The error caused by using a linear model instead of a polynomial one"
+        ],
+        "correct_answer": "The error of the prediction rule `h` computed on the training set `S`",
+        "motivation": "The text explains that since we can't compute the 'perfect minimal error' (using the unknown `f`), we instead 'compute the error of `h` based on our training set `S`.' This is the empirical error."
+    },
+    {
+        "question": "In the car dealership example, what model was proposed as the *simplest* option?",
+        "options": [
+            "A high-degree polynomial model",
+            "A stochastic gradient descent model",
+            "A neural network model",
+            "A Linear Regression model"
+        ],
+        "correct_answer": "A Linear Regression model",
+        "motivation": "The text says, 'Let’s just propose the simplest model we can think of: Linear Regression.' The model's hypothesis is given as a straight line: `predicted_price = weight * mileage + bias`."
+    },
+    {
+        "question": "What is 'overfitting'?",
+        "options": [
+            "A model that is too simple to capture the underlying trend",
+            "The process of minimizing the Mean Squared Error (MSE)",
+            "When a model 'memorized' the training data, including its random noise, and fails to generalize",
+            "The use of a Linear Regression model for a complex problem"
+        ],
+        "correct_answer": "When a model 'memorized' the training data, including its random noise, and fails to generalize",
+        "motivation": "The text describes overfitting as when the model 'memorized the training data, and adapted way too much, aka including its random noise, instead of “learning the general trend”.' This leads to poor performance on new data."
+    },
+    {
+        "question": "What is the primary characteristic of Supervised Learning?",
+        "options": [
+            "The data is unlabeled, and the machine must find hidden structures",
+            "The machine learns by interacting with an environment and receiving rewards or penalties",
+            "The data is labeled, and the goal is to learn a mapping function from inputs to outputs",
+            "The machine uses a 'plausibility engine' to predict the next token"
+        ],
+        "correct_answer": "The data is labeled, and the goal is to learn a mapping function from inputs to outputs",
+        "motivation": "The source defines Supervised Learning as the case 'When the data is labeled,' and states its goal is 'To learn a mapping function from inputs (X) to outputs (Y).'"
+    },
+    {
+        "question": "What is the core task of 'Unsupervised Learning'?",
+        "options": [
+            "To predict a continuous value, like a house price",
+            "To learn from labeled 'ground truth' data",
+            "To find hidden structures or patterns in unlabeled data",
+            "To learn a policy through trial and error with rewards"
+        ],
+        "correct_answer": "To find hidden structures or patterns in unlabeled data",
+        "motivation": "The text states that in Unsupervised Learning, 'The data is unlabeled' and the 'Goal: To find hidden structures and patterns in data.' This is contrasted with Supervised Learning, which uses labeled data."
+    },
+    {
+        "question": "How is 'Reinforcement Learning' (RL) described?",
+        "options": [
+            "As a method for finding patterns in unlabeled data",
+            "As a method for learning a mapping from inputs (X) to outputs (Y)",
+            "As an 'agent' learning through trial and error by interacting with an environment to maximize a 'reward'",
+            "As a system that is perfectly predictable and involves no randomness"
+        ],
+        "correct_answer": "As an 'agent' learning through trial and error by interacting with an environment to maximize a 'reward'",
+        "motivation": "The text describes Reinforcement Learning as an 'Agent' that 'interacts with an Environment.' It 'learns by trial and error' based on 'Rewards' or 'Penalties' with the 'Goal: To learn the best “policy”... that maximizes its cumulative reward over time.'"
+    },
+    {
+        "question": "What is the 'garbage in, garbage out' (GIGO) principle in ML?",
+        "options": [
+            "The idea that ML models can fix bad data through optimization",
+            "The fact that the quality of an ML model's output is entirely dependent on the quality of its input data",
+            "A type of model used for sorting waste",
+            "The process of cleaning and preprocessing data"
+        ],
+        "correct_answer": "The fact that the quality of an ML model's output is entirely dependent on the quality of its input data",
+        "motivation": "The text introduces 'Garbage in, Garbage out' to mean 'the quality of your data *directly* determines the quality of your model.' If the input data is flawed, the model's predictions will be, too."
+    },
+    {
+        "question": "What is an example of 'Biased Data' given in the text?",
+        "options": [
+            "A sensor recording an impossible temperature",
+            "A customer dataset where half the age entries are blank",
+            "A hiring system trained on data where 90% of past hires were male, leading the model to favor male candidates",
+            "Including a student's 'shoe size' to predict their exam score"
+        ],
+        "correct_answer": "A hiring system trained on data where 90% of past hires were male, leading the model to favor male candidates",
+        "motivation": "The text provides this exact example for Biased Data: 'a hiring ML system uses data... where, historically, 90% of engineers hired were male: the model will likely learn that being male is a key characteristic... and will be biased against qualified female candidates.'"
+    },
+    {
+        "question": "In the core ML workflow, what is 'Preprocessing'?",
+        "options": [
+            "The final step where the model is put into a production environment",
+            "The step where the model 'learns' the patterns from data",
+            "Gathering the raw data from databases, APIs, or files",
+            "Cleaning, formatting, and transforming data into a usable state"
+        ],
+        "correct_answer": "Cleaning, formatting, and transforming data into a usable state",
+        "motivation": "The source material's 'core workflow' lists Preprocessing as the step that 'involves cleaning the data (handling missing values, removing duplicates), formatting it, and transforming it into a usable state.'"
+    },
+    {
+        "question": "What is the purpose of the 'validation set' in a training framework?",
+        "options": [
+            "It is the main dataset used to 'learn' the model parameters (like weights)",
+            "It is used for the final, one-time evaluation of the *best* model's performance",
+            "It is used to compare different models or tune hyperparameters, to see which model generalizes best",
+            "It is a dataset of 'ground truth' that is never used"
+        ],
+        "correct_answer": "It is used to compare different models or tune hyperparameters, to see which model generalizes best",
+        "motivation": "The text explains the validation set is used 'to *validate* which one [model] we should pick' and to tune 'hyperparameters.' It's for model selection, unlike the training set (for learning) or the test set (for final evaluation)."
+    },
+    {
+        "question": "What is the 'test set' used for?",
+        "options": [
+            "To train the model on the largest portion of data",
+            "To compare different models against each other to pick the best one",
+            "To provide a final, unbiased assessment of the *chosen* model's performance on unseen data",
+            "To find hidden patterns in unlabeled data"
+        ],
+        "correct_answer": "To provide a final, unbiased assessment of the *chosen* model's performance on unseen data",
+        "motivation": "The text states the test set is 'a final, held-back, *untouched* dataset.' It 'is used only *once*' to 'get a final, unbiased measure of how our *chosen* model... will perform in the real world.'"
+    },
+    {
+        "question": "According to the text, what is a vector?",
+        "options": [
+            "A grid of numbers, like a spreadsheet",
+            "A cluster of common information that describes a single point of data",
+            "A mathematical operation that tells how aligned two points are",
+            "The rate of change of a function at a given point"
+        ],
+        "correct_answer": "A cluster of common information that describes a single point of data",
+        "motivation": "The source material defines a vector as a 'cluster of common information that describes a single point of data,' using the example of a student's attributes [19, 12, 88]. A grid of numbers is a matrix, an operation for alignment is a dot product, and the rate of change is a derivative."
+    },
+    {
+        "question": "What does a large, positive dot product between two vectors indicate?",
+        "options": [
+            "The vectors are unrelated and geometrically perpendicular",
+            "The vectors point in opposite directions and contrast each other",
+            "The vectors point in a similar direction",
+            "The vectors represent a spreadsheet of data"
+        ],
+        "correct_answer": "The vectors point in a similar direction",
+        "motivation": "The text states, 'a large, positive, dot product means the vectors point in a similar direction.' A value near zero means they are unrelated (perpendicular), and a large negative value means they point in opposite directions."
+    },
+    {
+        "question": "What is a matrix defined as in the source material?",
+        "options": [
+            "A list of numbers describing a single student",
+            "A fundamental operation that tells us how aligned two vectors are",
+            "A grid of numbers, like a spreadsheet, often representing a collection of data points",
+            "The multi-dimensional version of a derivative"
+        ],
+        "correct_answer": "A grid of numbers, like a spreadsheet, often representing a collection of data points",
+        "motivation": "The text explains that if you stack multiple vectors (like data for 100 students) together, you get a grid of numbers, which 'in math, is called a matrix.' It is compared to a spreadsheet."
+    },
+    {
+        "question": "In the context of calculus for ML, what does a derivative, `f'(x)`, tell you?",
+        "options": [
+            "The direction of the steepest ascent for a multi-dimensional function",
+            "The average value of a dataset",
+            "The rate of change or 'trend' of a function at any given point",
+            "How aligned two vectors are"
+        ],
+        "correct_answer": "The rate of change or 'trend' of a function at any given point",
+        "motivation": "The source material defines the derivative `f'(x)` as telling you the function's 'rate of change at any given point (geometrically, that’s simply its *slope*).' This helps understand the function's 'trend'."
+    },
+    {
+        "question": "What is the gradient (`∇f`) described as in the text?",
+        "options": [
+            "A function used to model errors as a 'hilly landscape'",
+            "The multi-dimensional version of a derivative",
+            "A collection of data points in a grid",
+            "A process that starts at a random point and steps downhill"
+        ],
+        "correct_answer": "The multi-dimensional version of a derivative",
+        "motivation": "The text explicitly states that the gradient, `∇f`, 'is the multi-dimensional version of a derivative.' It points in the direction of the steepest ascent."
+    },
+    {
+        "question": "In machine learning, what is the primary goal of optimization?",
+        "options": [
+            "To find the average and spread of the data",
+            "To stack vectors into a matrix",
+            "To minimize errors and maximize results",
+            "To ensure a system is deterministic"
+        ],
+        "correct_answer": "To minimize errors and maximize results",
+        "motivation": "The text describes optimization using the 'min-maxing' concept: 'We want to minimize the errors, *and* maximize results.' This is a core problem that optimization as a field addresses."
+    },
+    {
+        "question": "What is a 'loss function' in the context of ML optimization?",
+        "options": [
+            "A function that models the 'hilly landscape' of errors",
+            "A function that calculates the dot product of two vectors",
+            "The algorithm used to find the minimum error",
+            "A function that represents the 'ground truth'"
+        ],
+        "correct_answer": "A function that models the 'hilly landscape' of errors",
+        "motivation": "The text explains that to find the lowest valley (minimum error), 'we could model our errors as a function of that “hilly landscape”; we call such function a *loss function*.'"
+    },
+    {
+        "question": "What is the core idea of the Stochastic Gradient Descent algorithm?",
+        "options": [
+            "To analytically compute the exact optimal solution",
+            "To take a small step in the direction of the gradient (uphill)",
+            "To start at a random point, calculate the gradient, and take a small step in the opposite direction (downhill)",
+            "To perfectly fit a model to every single data point in the training set"
+        ],
+        "correct_answer": "To start at a random point, calculate the gradient, and take a small step in the opposite direction (downhill)",
+        "motivation": "The text outlines the Stochastic Gradient Descent algorithm as: 1. start at a random point, 2. calculate the gradient, and 3. take a small step in the *opposite* direction (downhill). This is repeated iteratively."
+    },
+    {
+        "question": "Which statistical measure is described as 'robust to outliers'?",
+        "options": [
+            "Mean",
+            "Median",
+            "Variance",
+            "Standard Deviation"
+        ],
+        "correct_answer": "Median",
+        "motivation": "The source material defines the 'Median' as 'The middle value when the data is sorted. More robust to outliers.' The Mean, in contrast, is 'Prone to being skewed by outliers.'"
+    },
+    {
+        "question": "What is the key characteristic of a stochastic system?",
+        "options": [
+            "The output is perfectly predictable from the input",
+            "The same input always leads to the same output",
+            "There is inherent randomness, and the same input can lead to different outputs",
+            "It represents the 'ground truth' mapping"
+        ],
+        "correct_answer": "There is inherent randomness, and the same input can lead to different outputs",
+        "motivation": "The text defines stochastic systems as having 'inherent randomness' where the 'same input can lead to different outputs.' In contrast, deterministic systems are perfectly predictable."
+    },
+    {
+        "question": "What core feature of Elixir programming is highlighted in the text?",
+        "options": [
+            "It uses classical 'loops' for iteration",
+            "It has no mutability, meaning variables can only be reassigned, not changed",
+            "It is primarily used for statistical analysis",
+            "It is a deterministic systems language"
+        ],
+        "correct_answer": "It has no mutability, meaning variables can only be reassigned, not changed",
+        "motivation": "The source states, 'Elixir has no *mutability*, meaning: you can’t really *change* variables, only *reassign* them.' It also notes that this is why it relies on recursion instead of classical loops."
+    },
+    {
+        "question": "What is the 'paradigm shift' of Machine Learning compared to Traditional Programming?",
+        "options": [
+            "In ML, the programmer figures out all the rules explicitly",
+            "In ML, the computer is provided with data and figures out the rules on its own",
+            "In ML, the goal is to create deterministic systems",
+            "In ML, programs are written in functional languages like Elixir"
+        ],
+        "correct_answer": "In ML, the computer is provided with data and figures out the rules on its own",
+        "motivation": "The text contrasts Traditional Programming, where 'The programmer figures out the rules,' with Machine Learning, where 'we provide the computer with data... The computer then figures out the rules on its own.'"
+    },
+    {
+        "question": "What does 'PAC' stand for in the context of ML models?",
+        "options": [
+            "Programming and Calculus",
+            "Pattern, Algorithm, Compute",
+            "Probably Approximately Correct",
+            "Prediction, Accuracy, Classification"
+        ],
+        "correct_answer": "Probably Approximately Correct",
+        "motivation": "The text introduces 'Probably Approximately Correct (PAC) models' as algorithms that 'work with high probability' and whose output 'might not be optimal,' combining 'approximately correct' heuristics with 'randomized' steps."
+    },
+    {
+        "question": "In the formal definition of machine learning, what is the 'prediction rule' or 'model'?",
+        "options": [
+            "The set of all possible objects, `X`",
+            "The set of all possible labels, `Y`",
+            "The set of training data, `S`",
+            "A function `h: X→Y` that predicts a label for a given object"
+        ],
+        "correct_answer": "A function `h: X→Y` that predicts a label for a given object",
+        "motivation": "The text states, 'A learner output is a prediction rule... a function that, given an object, tries to *predict* a... label.' It is mathematically written as `h: X→Y` and is called the ML model."
+    },
+    {
+        "question": "What is the 'empirical error'?",
+        "options": [
+            "The 'ground truth' error, which is impossible to compute",
+            "The error of the prediction rule `h` computed on the training set `S`",
+            "An error in the Elixir code",
+            "The error caused by using a linear model instead of a polynomial one"
+        ],
+        "correct_answer": "The error of the prediction rule `h` computed on the training set `S`",
+        "motivation": "The text explains that since we can't compute the 'perfect minimal error' (using the unknown `f`), we instead 'compute the error of `h` based on our training set `S`.' This is the empirical error."
+    },
+    {
+        "question": "In the car dealership example, what model was proposed as the *simplest* option?",
+        "options": [
+            "A high-degree polynomial model",
+            "A stochastic gradient descent model",
+            "A neural network model",
+            "A Linear Regression model"
+        ],
+        "correct_answer": "A Linear Regression model",
+        "motivation": "The text says, 'Let’s just propose the simplest model we can think of: Linear Regression.' The model's hypothesis is given as a straight line: `predicted_price = weight * mileage + bias`."
+    },
+    {
+        "question": "What is 'overfitting'?",
+        "options": [
+            "A model that is too simple to capture the underlying trend",
+            "The process of minimizing the Mean Squared Error (MSE)",
+            "When a model 'memorized' the training data, including its random noise, and fails to generalize",
+            "The use of a Linear Regression model for a complex problem"
+        ],
+        "correct_answer": "When a model 'memorized' the training data, including its random noise, and fails to generalize",
+        "motivation": "The text describes overfitting as when the model 'memorized the training data, and adapted way too much, aka including its random noise, instead of “learning the general trend”.' This leads to poor performance on new data."
+    },
+    {
+        "question": "What is the primary characteristic of Supervised Learning?",
+        "options": [
+            "The data is unlabeled, and the machine must find hidden structures",
+            "The machine learns by interacting with an environment and receiving rewards or penalties",
+            "The data is labeled, and the goal is to learn a mapping function from inputs to outputs",
+            "The machine uses a 'plausibility engine' to predict the next token"
+        ],
+        "correct_answer": "The data is labeled, and the goal is to learn a mapping function from inputs to outputs",
+        "motivation": "The source defines Supervised Learning as the case 'When the data is labeled,' and states its goal is 'To learn a mapping function from inputs (X) to outputs (Y).'"
+    },
+    {
+        "question": "What is the core task of 'Unsupervised Learning'?",
+        "options": [
+            "To predict a continuous value, like a house price",
+            "To learn from labeled 'ground truth' data",
+            "To find hidden structures or patterns in unlabeled data",
+            "To learn a policy through trial and error with rewards"
+        ],
+        "correct_answer": "To find hidden structures or patterns in unlabeled data",
+        "motivation": "The text states that in Unsupervised Learning, 'The data is unlabeled' and the 'Goal: To find hidden structures and patterns in data.' This is contrasted with Supervised Learning, which uses labeled data."
+    },
+    {
+        "question": "How is 'Reinforcement Learning' (RL) described?",
+        "options": [
+            "As a method for finding patterns in unlabeled data",
+            "As a method for learning a mapping from inputs (X) to outputs (Y)",
+            "As an 'agent' learning through trial and error by interacting with an environment to maximize a 'reward'",
+            "As a system that is perfectly predictable and involves no randomness"
+        ],
+        "correct_answer": "As an 'agent' learning through trial and error by interacting with an environment to maximize a 'reward'",
+        "motivation": "The text describes Reinforcement Learning as an 'Agent' that 'interacts with an Environment.' It 'learns by trial and error' based on 'Rewards' or 'Penalties' with the 'Goal: To learn the best “policy”... that maximizes its cumulative reward over time.'"
+    },
+    {
+        "question": "What is the 'garbage in, garbage out' (GIGO) principle in ML?",
+        "options": [
+            "The idea that ML models can fix bad data through optimization",
+            "The fact that the quality of an ML model's output is entirely dependent on the quality of its input data",
+            "A type of model used for sorting waste",
+            "The process of cleaning and preprocessing data"
+        ],
+        "correct_answer": "The fact that the quality of an ML model's output is entirely dependent on the quality of its input data",
+        "motivation": "The text introduces 'Garbage in, Garbage out' to mean 'the quality of your data *directly* determines the quality of your model.' If the input data is flawed, the model's predictions will be, too."
+    },
+    {
+        "question": "What is an example of 'Biased Data' given in the text?",
+        "options": [
+            "A sensor recording an impossible temperature",
+            "A customer dataset where half the age entries are blank",
+            "A hiring system trained on data where 90% of past hires were male, leading the model to favor male candidates",
+            "Including a student's 'shoe size' to predict their exam score"
+        ],
+        "correct_answer": "A hiring system trained on data where 90% of past hires were male, leading the model to favor male candidates",
+        "motivation": "The text provides this exact example for Biased Data: 'a hiring ML system uses data... where, historically, 90% of engineers hired were male: the model will likely learn that being male is a key characteristic... and will be biased against qualified female candidates.'"
+    },
+    {
+        "question": "In the core ML workflow, what is 'Preprocessing'?",
+        "options": [
+            "The final step where the model is put into a production environment",
+            "The step where the model 'learns' the patterns from data",
+            "Gathering the raw data from databases, APIs, or files",
+            "Cleaning, formatting, and transforming data into a usable state"
+        ],
+        "correct_answer": "Cleaning, formatting, and transforming data into a usable state",
+        "motivation": "The source material's 'core workflow' lists Preprocessing as the step that 'involves cleaning the data (handling missing values, removing duplicates), formatting it, and transforming it into a usable state.'"
+    },
+    {
+        "question": "What is the purpose of the 'validation set' in a training framework?",
+        "options": [
+            "It is the main dataset used to 'learn' the model parameters (like weights)",
+            "It is used for the final, one-time evaluation of the *best* model's performance",
+            "It is used to compare different models or tune hyperparameters, to see which model generalizes best",
+            "It is a dataset of 'ground truth' that is never used"
+        ],
+        "correct_answer": "It is used to compare different models or tune hyperparameters, to see which model generalizes best",
+        "motivation": "The text explains the validation set is used 'to *validate* which one [model] we should pick' and to tune 'hyperparameters.' It's for model selection, unlike the training set (for learning) or the test set (for final evaluation)."
+    },
+    {
+        "question": "What is the 'test set' used for?",
+        "options": [
+            "To train the model on the largest portion of data",
+            "To compare different models against each other to pick the best one",
+            "To provide a final, unbiased assessment of the *chosen* model's performance on unseen data",
+            "To find hidden patterns in unlabeled data"
+        ],
+        "correct_answer": "To provide a final, unbiased assessment of the *chosen* model's performance on unseen data",
+        "motivation": "The text states the test set is 'a final, held-back, *untouched* dataset.' It 'is used only *once*' to 'get a final, unbiased measure of how our *chosen* model... will perform in the real world.'"
+    },
+    {
+        "question": "In the car dealership example, what is the 'weight' in the linear model `predicted_price = weight * mileage + bias`?",
+        "options": [
+            "The starting price of all cars",
+            "A parameter that represents how much the price changes for each additional km of mileage",
+            "The average mileage of all cars in the dataset",
+            "The final predicted price of the car"
+        ],
+        "correct_answer": "A parameter that represents how much the price changes for each additional km of mileage",
+        "motivation": "In the linear regression model `predicted_price = weight * mileage + bias`, the 'weight' (or slope) determines the relationship between mileage and price. A negative weight, as in the example `-0.14`, means the price decreases by that amount for each unit increase in mileage."
+    },
+    {
+        "question": "What does the text identify as the main goal of a machine learning model, which differs from having a low training error?",
+        "options": [
+            "To achieve a training error of exactly zero",
+            "To create the most complex model possible, like a high-degree polynomial",
+            "To find a model `h` that performs well in real-world scenarios on new, unseen data",
+            "To perfectly memorize all the data points in the training set"
+        ],
+        "correct_answer": "To find a model `h` that performs well in real-world scenarios on new, unseen data",
+        "motivation": "The text explicitly states that 'having a low training error isn't our primary goal.' The overfitting example demonstrates that a zero-error model can be useless. The true goal is to 'find a model `h` so that it can perform nicely in real world scenarios' (generalization)."
+    },
+    {
+        "question": "In the formal definition of Reinforcement Learning, what is a 'policy'?",
+        "options": [
+            "The reward or penalty the agent receives",
+            "The agent's strategy for choosing an action based on the current state",
+            "The set of all possible states in the environment",
+            "The environment the agent interacts with"
+        ],
+        "correct_answer": "The agent's strategy for choosing an action based on the current state",
+        "motivation": "The text defines the 'Policy (π)' in Reinforcement Learning as the 'Agent’s strategy. This is a function that maps a state (S) to an action (A).' The agent's goal is to learn the *best* policy."
+    },
+    {
+        "question": "What is an example of 'Missing Data' provided in the text?",
+        "options": [
+            "A sensor recording -200°C in July",
+            "A hiring dataset that is 90% male",
+            "Customer information where half the entries for age are blank",
+            "A house listed with 10 square meters and 15 bedrooms"
+        ],
+        "correct_answer": "Customer information where half the entries for age are blank",
+        "motivation": "The text gives a specific example of Missing Data: 'customer information where half the entries for age are blank, while being interested in its purchasing habits.' The sensor and house examples relate to 'Incorrect or Inaccurate Data,' and the hiring example relates to 'Biased Data.'"
+    },
+    {
+        "question": "What is the purpose of 'K-Fold Cross-Validation'?",
+        "options": [
+            "To deploy the model to production",
+            "To gather the initial raw data",
+            "To get a more robust estimate of model performance and avoid bias from a single train/validation split",
+            "To clean and format the data before training"
+        ],
+        "correct_answer": "To get a more robust estimate of model performance and avoid bias from a single train/validation split",
+        "motivation": "The text explains that K-Fold Cross-Validation is used 'to get a more robust estimate' of a model's performance. It involves splitting the data into 'K' folds and training/evaluating the model 'K' times, each time using a different fold as the validation set, then averaging the results."
+    },
+    {
+        "question": "What 2017 Google paper introduced the 'Transformer' architecture, changing the field of LLMs?",
+        "options": [
+            "\"The Unreasonable Effectiveness of Recurrent Neural Networks\"",
+            "\"Attention Is All You Need\"",
+            "\"Deep Learning for Natural Language Processing\"",
+            "\"Reinforcement Learning from Human Feedback\""
+        ],
+        "correct_answer": "\"Attention Is All You Need\"",
+        "motivation": "The text identifies Phase 4 of LLM history as starting in 2017 with the Google paper titled '\"Attention Is All You Need\"'. This paper 'introduced a new architecture: the Transformer.'"
+    },
+    {
+        "question": "What is the core idea of 'self-attention' in the Transformer architecture?",
+        "options": [
+            "To process text one word at a time, keeping a 'singleton memory'",
+            "To break text down into numerical tokens",
+            "To figure out which words in a sentence are most important to which other words, processing the context all at once",
+            "To fine-tune the model on a specific, supervised task"
+        ],
+        "correct_answer": "To figure out which words in a sentence are most important to which other words, processing the context all at once",
+        "motivation": "The text explains that the Transformer's core idea was to 'process and find the entire sentence context at once.' The mechanism for this is 'self-attention,' and its 'job is to figure out which words are most important to which other words.'"
+    },
+    {
+        "question": "In an LLM architecture, what is 'Tokenization'?",
+        "options": [
+            "Looking up a token in a giant dictionary to get a 'Meaning Vector'",
+            "Training the model to predict the next token in a sequence",
+            "The process of breaking text down into numbers (tokens) that the model can read",
+            "Using human feedback to rank the model's outputs"
+        ],
+        "correct_answer": "The process of breaking text down into numbers (tokens) that the model can read",
+        "motivation": "The text describes 'Tokenization' as the first step in the LLM architecture: 'the model can't read “words”... We need to break text down into numbers. These are called “tokens”.'"
+    },
+    {
+        "question": "What is an 'Embedding' in the context of LLMs?",
+        "options": [
+            "The final output of the model after fine-tuning",
+            "The process of breaking text into tokens",
+            "A vector that represents a token's 'position' in a multi-dimensional 'concept space'",
+            "A security vulnerability where a user tricks the model"
+        ],
+        "correct_answer": "A vector that represents a token's 'position' in a multi-dimensional 'concept space'",
+        "motivation": "The text defines an 'embedding' as the step after tokenization. The model looks up each token in a table that 'simply contains *a vector* for each token. This vector represents the token's \"position\" in a multi-dimensional “concept space”.'"
+    },
+    {
+        "question": "What is 'Pre-training' in the LLM architecture?",
+        "options": [
+            "The final step where human feedback is used to refine the model's helpfulness",
+            "The main *unsupervised* learning phase where the model learns by predicting the next token in a massive dataset",
+            "The *supervised* learning phase where the model is trained on specific tasks like translation or summarization",
+            "The process of creating 'Meaning Vectors' (embeddings) for tokens"
+        ],
+        "correct_answer": "The main *unsupervised* learning phase where the model learns by predicting the next token in a massive dataset",
+        "motivation": "The text describes 'Pre-training' as 'the biggest, unsupervised, training step' where the model 'is fed *all* the data... Its only goal is to predict the next token.' This is contrasted with 'Fine-Tuning,' which is supervised."
+    },
+    {
+        "question": "What is 'RLHF' (Reinforcement Learning from Human Feedback)?",
+        "options": [
+            "The initial unsupervised training step on web-scale data",
+            "The process of breaking text into numerical tokens",
+            "A 2017 paper that introduced the Transformer architecture",
+            "A fine-tuning step where human rankings of model outputs are used to train a 'reward model' to make the LLM more helpful and aligned",
+            "A fine-tuning step where human rankings of model outputs are used to train a 'reward model' to make the LLM more helpful and aligned"
+        ],
+        "correct_answer": "A fine-tuning step where human rankings of model outputs are used to train a 'reward model' to make the LLM more helpful and aligned",
+        "motivation": "The text explains 'RLHF' as a step after 'Fine-Tuning.' It involves 'humans... ranking the outputs.' This data is used to 'train a *new* “reward model”' which is then used with Reinforcement Learning 'to make the LLM “better” (more helpful, less toxic, etc.).'"
+    },
+    {
+        "question": "How does the text define LLM 'Hallucinations'?",
+        "options": [
+            "A deliberate attempt by the LLM to deceive the user",
+            "The LLM admitting that it does not know an answer",
+            "When the LLM confidently produces factually incorrect information or makes up sources",
+            "A type of security attack to trick the model"
+        ],
+        "correct_answer": "When the LLM confidently produces factually incorrect information or makes up sources",
+        "motivation": "The text defines 'Hallucinations' as when an LLM 'will confidently... make up facts' or cite 'a non-existent book, paper or documentation bit.' It emphasizes that this is not 'lying' because the LLM has no intent, it's just a 'plausibility engine' generating a statistically likely (but factually incorrect) sequence."
+    },
+    {
+        "question": "Why does the text call an LLM a 'plausibility engine,' not a 'truth engine'?",
+        "options": [
+            "Because its primary goal is to retrieve factual information from a database",
+            "Because it is trained to predict the next plausible token in a sequence, not to verify the factual truth of its statements",
+            "Because it has a 'knowledge cutoff' and cannot access new information",
+            "Because it is designed to be a creative writing partner"
+        ],
+        "correct_answer": "Because it is trained to predict the next plausible token in a sequence, not to verify the factual truth of its statements",
+        "motivation": "The text explicitly states: 'Recall that its pre-trained model goal is to predict the next plausible token in a sequence. **That’s it**. It is a “plausibility engine”, not a “truth engine”.' This explains *why* hallucinations happen."
+    },
+    {
+        "question": "What is a 'Prompt Injection' attack?",
+        "options": [
+            "When an LLM hallucinates and provides incorrect code",
+            "When an LLM's knowledge is outdated due to its training cutoff",
+            "When a malicious user crafts input to trick the model into ignoring the developer's instructions and following new, hidden ones",
+            "The process of fine-tuning an LLM for a specific task"
+        ],
+        "correct_answer": "When a malicious user crafts input to trick the model into ignoring the developer's instructions and following new, hidden ones",
+        "motivation": "The text defines 'Prompt injection' as 'an attack where a malicious user crafts their input to trick the model into ignoring the developer's original instructions and following the user's new, hidden instructions instead.'"
+    },
+    {
+        "question": "According to the text, why are LLMs vulnerable to prompt injections?",
+        "options": [
+            "Because they have a knowledge cutoff",
+            "Because they are 'plausibility engines'",
+            "Because the LLM cannot fundamentally distinguish between instructions (from a developer) and data (from the user)",
+            "Because they are not trained with RLHF"
+        ],
+        "correct_answer": "Because the LLM cannot fundamentally distinguish between instructions (from a developer) and data (from the user)",
+        "motivation": "The text explains this vulnerability: '...the LLM cannot fundamentally distinguish between instructions (from a developer) and data (from the user). In the end, it's all just tokens.' This is the core reason the attack works."
+    },
+    {
+        "question": "What is the 'knowledge cutoff' of an LLM?",
+        "options": [
+            "The LLM's inability to understand complex topics",
+            "A security measure to prevent prompt injections",
+            "The fact that an LLM's knowledge is static and based on its pre-training data, which is from a specific point in the past",
+            "The LLM's tendency to hallucinate facts"
+        ],
+        "correct_answer": "The fact that an LLM's knowledge is static and based on its pre-training data, which is from a specific point in the past",
+        "motivation": "The text defines the 'knowledge cutoff' as the state that 'its knowledge is not live.' It is a 'static snapshot of the pre-training data' from 'some point in the past,' and 'the model won’t learn anything since.'"
+    },
+    {
+        "question": "What is 'automation bias' in the context of over-relying on LLMs?",
+        "options": [
+            "The LLM's bias towards certain topics based on its training data",
+            "The assumption that because the model is articulate and confident, it must be right",
+            "A type of prompt injection attack",
+            "The process of using an LLM to automate software development"
+        ],
+        "correct_answer": "The assumption that because the model is articulate and confident, it must be right",
+        "motivation": "The text describes 'automation bias' as a consequence of over-reliance: 'Because the model is so articulate and confident, we develop an “automation bias”: we just assume it’s right.' This is part of the 'ChatGPT told me so' problem."
+    },
+    {
+        "question": "What is the text's correction to the myth 'An LLM is just a fancier autocomplete'?",
+        "options": [
+            "This is correct; it is just a larger autocomplete.",
+            "An LLM's scale unlocks 'emergent abilities'—complex behaviors not explicitly programmed, like step-by-step reasoning or writing code.",
+            "An LLM is a 'truth engine,' not an autocomplete tool.",
+            "An LLM is an information retrieval system, which is different from autocomplete."
+        ],
+        "correct_answer": "An LLM's scale unlocks 'emergent abilities'—complex behaviors not explicitly programmed, like step-by-step reasoning or writing code.",
+        "motivation": "The text refutes this myth by stating it's an 'over-simplification.' It explains that 'emergent abilities' like 'step-by-step reasoning (chain-of-thought), writing functional code, and even passing standardized exams' appear 'once the models become large enough.' This makes them 'far more powerful and flexible than simple autocomplete.'"
+    },
+    {
+        "question": "How does the text differentiate a Search Engine from an LLM?",
+        "options": [
+            "They are the same; an LLM is just a better search engine.",
+            "A Search Engine is a 'generator tool' and an LLM is a 'search tool'.",
+            "A Search Engine is an 'Information Retrieval system' (finds *existing* info), while an LLM is an 'Information Generation system' (produces *new* tokens).",
+            "A Search Engine is vulnerable to hallucinations, while an LLM is not."
+        ],
+        "correct_answer": "A Search Engine is an 'Information Retrieval system' (finds *existing* info), while an LLM is an 'Information Generation system' (produces *new* tokens).",
+        "motivation": "The text makes this distinction very clear: 'A Search Engine... is an “Information Retrieval system”... finding **existing** information... An LLM is an Information Generation system. It produces **new** tokens out of previously seen ones.'"
+    },
+    {
+        "question": "According to the text, what is the *wrong* way to use an LLM that leads to hallucinations?",
+        "options": [
+            "Asking it to brainstorm creative ideas",
+            "Asking it to rewrite an email in a professional tone",
+            "Asking it to summarize an article",
+            "Using it to retrieve facts, asking a 'generator tool' to do the job of a 'search tool'"
+        ],
+        "correct_answer": "Using it to retrieve facts, asking a 'generator tool' to do the job of a 'search tool'",
+        "motivation": "The text explicitly concludes its comparison of search engines and LLMs with this warning: '**Using an LLM to retrieve facts is exactly what leads to hallucinations.** **You are asking a “generator tool” to do the job of a “search tool”.**'"
+    },
+    {
+        "question": "What does the 'C' stand for in the C.R.O.P. prompting framework?",
+        "options": [
+            "Code",
+            "Creativity",
+            "Context",
+            "Clarity"
+        ],
+        "correct_answer": "Context",
+        "motivation": "The text introduces the C.R.O.P. Framework as: **C**ontext, **R**ole, **O**bjective, **P**arameters. The 'C' stands for Context, defined as the 'background information we need to understand the “universe” of any statement.'"
+    },
+    {
+        "question": "What does the 'R' stand for in the C.R.O.P. prompting framework?",
+        "options": [
+            "Role",
+            "Reasoning",
+            "Retrieval",
+            "Response"
+        ],
+        "correct_answer": "Role",
+        "motivation": "The text introduces the C.R.O.P. Framework as: **C**ontext, **R**ole, **O**bjective, **P**arameters. The 'R' stands for Role, which 'heavily guides the model's tone and style.'"
+    },
+    {
+        "question": "What does the 'O' stand for in the C.R.O.P. prompting framework?",
+        "options": [
+            "Output",
+            "Objective",
+            "Optimization",
+            "Options"
+        ],
+        "correct_answer": "Objective",
+        "motivation": "The text introduces the C.R.O.P. Framework as: **C**ontext, **R**ole, **O**bjective, **P**arameters. The 'O' stands for Objective, which means 'state the deliverable you expect, clearly and directly.'"
+    },
+    {
+        "question": "What does the 'P' stand for in the C.R.O.P. prompting framework?",
+        "options": [
+            "Prompt",
+            "Product",
+            "Plausibility",
+            "Parameters"
+        ],
+        "correct_answer": "Parameters",
+        "motivation": "The text introduces the C.R.O.P. Framework as: **C**ontext, **R**ole, **O**bjective, **P**arameters. The 'P' stands for Parameters, which are 'additional **constraints**' that 'help deliver results more close to our request,' especially for coding."
+    },
+    {
+        "question": "In the 'bad prompt' example for the URL shortener, what was a key failure?",
+        "options": [
+            "The prompt was too short and did not provide enough detail",
+            "The prompt asked for a technical design plan instead of code",
+            "The prompt was a 'stream of consciousness' that lacked clear constraints and context (e.g., internal vs. public tool)",
+            "The prompt specified the wrong tech stack (Elixir and Phoenix)"
+        ],
+        "correct_answer": "The prompt was a 'stream of consciousness' that lacked clear constraints and context (e.g., internal vs. public tool)",
+        "motivation": "The text analyzes the 'bad prompt' as a 'long “stream of consciousness” prompt that *feels* detailed - but in reality is actually unfocused, lacks clear constraints... There’s no clear context: we’re not mentioning this shortener is an internal-use tool.'"
+    },
+    {
+        "question": "In the 'good prompt' example for the URL shortener, what was a key *deliverable* requested from the LLM?",
+        "options": [
+            "All the Elixir and Phoenix code for the controller and Ecto schema",
+            "A comprehensive technical design plan, including routes, schema, and logic, but *no* Elixir or Phoenix code",
+            "A long 'stream of consciousness' brain-dump about URL shorteners",
+            "A list of alternative tech stacks to use instead of Elixir"
+        ],
+        "correct_answer": "A comprehensive technical design plan, including routes, schema, and logic, but *no* Elixir or Phoenix code",
+        "motivation": "The 'good prompt' explicitly instructs the LLM to 'Provide a comprehensive technical design plan' and, crucially, 'Do not write any Elixir or Phoenix code.' The goal was to define the system's components *before* implementation."
+    },
+    {
+        "question": "In the proposed software development framework, what is the 'Human Phase'?",
+        "options": [
+            "The phase where the human blindly copies and pastes code from the LLM",
+            "The phase where the human provides the initial creative spark and the LLM does all the thinking and planning",
+            "The phase where the human *must think* and provide sketches, tech constraints, and a product description *before* asking the LLM to act",
+            "The phase where the human ranks the LLM's outputs for RLHF"
+        ],
+        "correct_answer": "The phase where the human *must think* and provide sketches, tech constraints, and a product description *before* asking the LLM to act",
+        "motivation": "The text emphasizes that to *properly* use LLMs, 'we must think, and quite a lot.' The 'Human Phase' involves the human expert doing upfront work: 'Research' (providing sketches/screenshots), defining 'Tech constraints,' and writing a 'Product (quick!) description.'"
+    },
+    {
+        "question": "In the 'Agentic Phase' of software development, what is the 'Product Owner Agent' tasked with doing?",
+        "options": [
+            "Writing the final Elixir and Phoenix code",
+            "Creating a detailed multi-step implementation plan for the IDE Agent",
+            "Taking the human's sketches and requirements and expanding them into a full 'PRD document' (Product Requirements Document)",
+            "Finding bugs in the human's 'tech constraints' document"
+        ],
+        "correct_answer": "Taking the human's sketches and requirements and expanding them into a full 'PRD document' (Product Requirements Document)",
+        "motivation": "The text describes the 'Product Owner Agent' step as feeding the human-generated documents to a 'deep think model' and asking for a '“product owner”-like document.' The output is a 'lengthy “PRD document” which explains our product, fully.'"
+    },
+    {
+        "question": "In the 'Agentic Phase', why is it important for the 'Software Development Agent' to create a *plan* before writing code?",
+        "options": [
+            "This step is not important and can be skipped",
+            "To give the human something to read while the LLM writes the code",
+            "Because the agent needs to 'connect the dots' and understand *how* to apply the 'what' (the PRD) to the existing codebase",
+            "To generate a .txt file, which is the only format the LLM can write to"
+        ],
+        "correct_answer": "Because the agent needs to 'connect the dots' and understand *how* to apply the 'what' (the PRD) to the existing codebase",
+        "motivation": "The text stresses the importance of this planning step: 'We’ve fed the “what”, and this planning step will formulate a “how”. This enables the Agent to read the whole codebase, and now it’s able to “connect the dots”. This can’t be done (properly) in just one step!'"
+    },
+    {
+        "question": "What is the final action the human is told to take after the 'Software Development Agent' creates its implementation plan?",
+        "options": [
+            "Immediately run the agent and let it code",
+            "Delete the plan and write the code yourself",
+            "**Read it.** And then edit or ask for changes *before* the agent implements them",
+            "Thank the agent and close the program"
+        ],
+        "correct_answer": "**Read it.** And then edit or ask for changes *before* the agent implements them",
+        "motivation": "The text is very explicit about this: 'Finally, we’ve asked your agent to save the output of the plan into an editable text file. **Read it.** Again, **don’t skip this step.** We can (finally) edit or ask for some changes *before* the agent implements those.'"
+    },
+    {
+        "question": "What core concept from calculus is used to find the 'direction of steepest ascent' in a multi-dimensional function?",
+        "options": [
+            "Dot Product",
+            "Matrix",
+            "Derivative",
+            "Gradient (∇f)"
+        ],
+        "correct_answer": "Gradient (∇f)",
+        "motivation": "The text defines the derivative `f'(x)` as the rate of change for a simple function. It then introduces the gradient `∇f` as 'the multi-dimensional version of a derivative' and states it 'is a vector that **points in the direction of the steepest ascent**.'"
+    },
+    {
+        "question": "Why does the Stochastic Gradient Descent algorithm take a step in the *opposite* direction of the gradient?",
+        "options": [
+            "To maximize the error function",
+            "To find the direction of steepest ascent (go uphill)",
+            "To minimize the error (loss function) by going 'downhill' in the 'hilly landscape' of errors",
+            "To move to a random point in the landscape"
+        ],
+        "correct_answer": "To minimize the error (loss function) by going 'downhill' in the 'hilly landscape' of errors",
+        "motivation": "The text explains the goal is to 'minimize errors' by finding the 'lowest valley' in the 'hilly landscape' (the loss function). Since the gradient 'points uphill,' the algorithm takes 'a small step in **the opposite direction** (aka: go downhill)' to move towards the minimum."
+    },
+    {
+        "question": "What is the text's definition of a 'deterministic' system?",
+        "options": [
+            "A system with inherent randomness",
+            "A system where the same input can lead to different outputs",
+            "A system where the output is perfectly predictable from the input and involves no randomness",
+            "A machine learning model that is 'Probably Approximately Correct'"
+        ],
+        "correct_answer": "A system where the output is perfectly predictable from the input and involves no randomness",
+        "motivation": "The text defines deterministic systems as: 'when the output *is perfectly predictable* from the input. No randomness is involved. The same input leads to the same output.'"
+    },
+    {
+        "question": "What is the formal definition of the 'training data' in machine learning?",
+        "options": [
+            "The prediction rule `h: X→Y`",
+            "The set of all possible objects, `X`",
+            "A set of pairs of 'objects / labels', mathematically `S = {(x1,y1), ..., (xm, ym}`",
+            "The 'ground truth' function, `f`"
+        ],
+        "correct_answer": "A set of pairs of 'objects / labels', mathematically `S = {(x1,y1), ..., (xm, ym}`",
+        "motivation": "The text's 'complete definition' of learning lists 'A set of “training data”... mathematically: **`S = {(x1,y1), ..., (xm, ym}`**' which contains 'pairs of “objects / labels”'."
+    },
+    {
+        "question": "What is the 'Mean Squared Error (MSE)' used for in the car dealership example?",
+        "options": [
+            "To measure the empirical error (training error) of the model",
+            "To set the initial random values for `weight` and `bias`",
+            "To calculate the gradient of the loss function",
+            "To define the 'small step' size in gradient descent"
+        ],
+        "correct_answer": "To measure the empirical error (training error) of the model",
+        "motivation": "The text states, 'To answer this question [How good is our computed model?], we need to measure its error on the data it was trained on. **That is the empirical error (or training error)**.' It then introduces Mean Squared Error (MSE) as 'A common way to measure it.'"
+    },
+    {
+        "question": "Why was the 4th-degree polynomial model in the car example 'perfect' on the training data but bad in practice?",
+        "options": [
+            "It was too simple and 'underfit' the data",
+            "It was a Linear Regression model in disguise",
+            "It had 'overfit' the data, memorizing its random noise instead of the general trend, leading to poor generalization",
+            "It failed to achieve a training error of zero"
+        ],
+        "correct_answer": "It had 'overfit' the data, memorizing its random noise instead of the general trend, leading to poor generalization",
+        "motivation": "The text explains this as the 'overfitting trap.' The model 'memorized the training data, and adapted way too much, aka **including its random noise**, instead of “learning the general trend”.' This caused it to make unreasonable predictions (like a negative price) on new data."
+    },
+    {
+        "question": "What is the key takeaway from the 'overfitting trap' example?",
+        "options": [
+            "Always use the most complex model possible to get the training error to zero",
+            "A low training error is the primary and most important goal of machine learning",
+            "Linear models are always better than polynomial models",
+            "A low training error does not guarantee good performance on new data; the goal is to generalize, not memorize"
+        ],
+        "correct_answer": "A low training error does not guarantee good performance on new data; the goal is to generalize, not memorize",
+        "motivation": "The text concludes this section by stating, 'This demonstrates that having a low training error isn't our primary goal.' The real goal is to 'find a model `h` so that it can perform nicely in real world scenarios,' which is the definition of generalization."
+    },
+    {
+        "question": "In the formal definition of Reinforcement Learning, what is the 'State (S)'?",
+        "options": [
+            "The agent's strategy or function",
+            "The reward the agent receives",
+            "A description of the environment at a specific moment",
+            "The action the agent chooses"
+        ],
+        "correct_answer": "A description of the environment at a specific moment",
+        "motivation": "The text's formal definitions for RL list 'State (S): A snapshot of the environment. E.g., the position of all pieces on a chessboard.'"
+    },
+    {
+        "question": "What is an example of 'Incorrect or Inaccurate Data' provided in the text?",
+        "options": [
+            "A hiring dataset that is 90% male",
+            "Customer information where half the age entries are blank",
+            "A sensor recording a temperature of -200°C in Udine in July",
+            "A dataset that is split into training, validation, and test sets"
+        ],
+        "correct_answer": "A sensor recording a temperature of -200°C in Udine in July",
+        "motivation": "The text provides this as a specific example of 'Incorrect or Inaccurate Data': 'a sensor records a temperature of -200°C in Udine, in July.' The hiring data is 'Biased Data' and the blank age entries are 'Missing Data.'"
+    },
+    {
+        "question": "What is the purpose of the 'Model Training' step in the core ML workflow?",
+        "options": [
+            "To clean, format, and transform the data",
+            "To gather raw data from various sources",
+            "To use the 'training set' to teach the model to find patterns and adjust its parameters",
+            "To deploy the model into a live production environment"
+        ],
+        "correct_answer": "To use the 'training set' to teach the model to find patterns and adjust its parameters",
+        "motivation": "The text describes the 'Model Training' step as the one where 'the model “learns”.' It specifies that 'The “training set” is used to actually learn the patterns and adjust the model’s parameters (like the `weight` and `bias`...)'"
+    },
+    {
+        "question": "In the core ML workflow, what is the 'Deployment' step?",
+        "options": [
+            "The process of cleaning and formatting data",
+            "The final, one-time evaluation of the model on the test set",
+            "The process of integrating the trained model into a real-world application or system",
+            "The process of splitting data into K-Folds for cross-validation"
+        ],
+        "correct_answer": "The process of integrating the trained model into a real-world application or system",
+        "motivation": "The text lists 'Deployment' as step 4 of the core workflow, describing it as 'Putting the model into a production environment (e.g., inside an app, on a server) where it can make predictions on new, real-world data.'"
+    },
+    {
+        "question": "What historical phase of LLMs is associated with RNNs (Recurrent Neural Networks) and LSTMs?",
+        "options": [
+            "Phase 1: Symbolic AI",
+            "Phase 2: Statistical",
+            "Phase 3: RNNs/LSTMs (Sequential)",
+            "Phase 4: The Transformer"
+        ],
+        "correct_answer": "Phase 3: RNNs/LSTMs (Sequential)",
+        "motivation": "The text's history of LLMs lists 'Phase 3: RNNs/LSTMs (Sequential)' and describes them as 'the first model types that could handle sequential data (like text) by using... a “memory” (or *state*).'"
+    },
+    {
+        "question": "What was the main limitation of RNNs that the Transformer architecture aimed to solve?",
+        "options": [
+            "RNNs could not process text sequentially",
+            "RNNs' sequential, one-word-at-a-time processing and 'singleton memory' was a bottleneck",
+            "RNNs were 'plausibility engines,' not 'truth engines'",
+            "RNNs were vulnerable to prompt injections"
+        ],
+        "correct_answer": "RNNs' sequential, one-word-at-a-time processing and 'singleton memory' was a bottleneck",
+        "motivation": "The text explains that the 2017 Transformer paper 'abandoned the previously adopted sequential approach of RNNs.' The Transformer's idea was 'instead of keeping a “singleton memory”, composed by reading input text one-word-at-a-time, to process and find the entire sentence context at once.'"
+    },
+    {
+        "question": "What is 'Fine-Tuning' in the LLM architecture?",
+        "options": [
+            "The initial unsupervised training on web-scale data",
+            "The process of breaking text into numerical tokens",
+            "A *supervised* training step on a smaller, specific dataset to teach the model a particular task (e.g., summarization)",
+            "The process of using human feedback to make the model 'safer'"
+        ],
+        "correct_answer": "A *supervised* training step on a smaller, specific dataset to teach the model a particular task (e.g., summarization)",
+        "motivation": "The text describes 'Fine-Tuning' as a step after pre-training. It is a 'supervised, training step' where the model is 'trained on a much smaller, *curated* dataset... for a *specific* task' (e.g., 'a dataset of questions and answers')."
+    },
+    {
+        "question": "According to the text, what is the myth about LLMs 'understanding' human language?",
+        "options": [
+            "LLMs truly understand the meaning and intent behind words, just like humans",
+            "LLMs 'understanding' is just a 'statistical map of which tokens are likely to follow other tokens' in a given context",
+            "LLMs' understanding comes from the 'Fine-Tuning' step, not the 'Pre-training' step",
+            "LLMs can only understand text, not code"
+        ],
+        "correct_answer": "LLMs 'understanding' is just a 'statistical map of which tokens are likely to follow other tokens' in a given context",
+        "motivation": "The text refutes the myth 'Can an LLM *understand* me?' by stating 'No.' It explains: 'It’s all about statistics... What we perceive as “understanding” is just an incredibly complex and massive statistical map of which tokens are likely to follow other tokens...'"
+    },
+    {
+        "question": "What is the key difference between 'information retrieval' and 'information generation'?",
+        "options": [
+            "Retrieval finds *existing* information, while generation produces *new* information (tokens)",
+            "Retrieval is what LLMs do, and generation is what search engines do",
+            "Retrieval is always factual, while generation is always fictional",
+            "There is no difference; they are two terms for the same process"
+        ],
+        "correct_answer": "Retrieval finds *existing* information, while generation produces *new* information (tokens)",
+        "motivation": "The text introduces these terms to contrast Search Engines and LLMs. A Search Engine (retrieval) is for 'finding **existing** information.' An LLM (generation) 'produces **new** tokens out of previously seen ones.'"
+    },
+    {
+        "question": "In the C.R.O.P. framework, what is the purpose of the 'Role' (R) parameter?",
+        "options": [
+            "To provide the background information and context of the request",
+            "To state the clear, unambiguous deliverable that is expected",
+            "To add constraints, such as 'output as JSON'",
+            "To guide the model's tone, style, and the knowledge-base it draws from (e.g., 'Act as a computer science professor')"
+        ],
+        "correct_answer": "To guide the model's tone, style, and the knowledge-base it draws from (e.g., 'Act as a computer science professor')",
+        "motivation": "The text explains the 'Role' parameter 'heavily guides the model's tone and style of the response.' It also suggests telling the LLM who *you* are to 'influence the “knowledge-base” it draws the attention from.'"
+    },
+    {
+        "question": "What is a 'PRD document' as described in the 'Agentic Phase' of software development?",
+        "options": [
+            "A file containing the final, production-ready code",
+            "A document defining the 'core software engineering principles'",
+            "A 'Product Requirements Document' that an LLM (acting as a Product Owner) expands from the human's initial sketches and notes",
+            "A text file containing the multi-step implementation plan from the 'Software Development Agent'"
+        ],
+        "correct_answer": "A 'Product Requirements Document' that an LLM (acting as a Product Owner) expands from the human's initial sketches and notes",
+        "motivation": "The text describes the 'Product Owner Agent' step's goal as creating a 'PRD document.' This is a 'lengthy “PRD document” which explains our product, fully,' generated *from* the human's inputs (sketches, constraints, description)."
+    },
+    {
+        "question": "What does the text mean by 'anthropomorphize' in the context of LLMs?",
+        "options": [
+            "To treat LLMs as simple autocomplete tools",
+            "To use LLMs for information retrieval instead of generation",
+            "To attribute human-like qualities such as 'thinks,' 'knows,' or 'understands' to LLMs",
+            "To use the C.R.O.P. framework for prompting"
+        ],
+        "correct_answer": "To attribute human-like qualities such as 'thinks,' 'knows,' or 'understands' to LLMs",
+        "motivation": "The text states, 'We, humans, are quite the egocentric beings. We tend to *anthropomorphize* everything. LLMs are no exception: we use wordings like “it thinks”, “it says”, “it lied” or “it understands me”.'"
+    },
+    {
+        "question": "In the 'Human Phase' of software development with LLMs, what is the 'Tech constraints' output?",
+        "options": [
+            "A full architecture document for the application, written by the human",
+            "A small 'structure document' explaining the human's 'core software engineering principles' (e.g., frameworks, libraries)",
+            "Sketches and screenshots of the desired result",
+            "A lengthy 'PRD document' written by the human"
+        ],
+        "correct_answer": "A small 'structure document' explaining the human's 'core software engineering principles' (e.g., frameworks, libraries)",
+        "motivation": "The text defines the 'Tech constraints' step as the human putting on the 'architect hat' to define 'languages, frameworks, libraries, core software principles.' The output is 'a small “structure document” explaining our “core software engineering principles”.'"
+    },
+    {
+        "question": "What is a dot product, as described in the text?",
+        "options": [
+            "A grid of numbers representing a dataset",
+            "The multi-dimensional version of a derivative",
+            "An operation that tells how aligned two vectors are, calculated by multiplying corresponding elements and summing the results",
+            "A cluster of common information describing a single data point"
+        ],
+        "correct_answer": "An operation that tells how aligned two vectors are, calculated by multiplying corresponding elements and summing the results",
+        "motivation": "The text defines a dot product as 'a fundamental operation that tells us *how aligned two vectors are*.' It provides an example, 'A⋅B = 1*3 + 2*4 = 11', which shows the process of multiplying corresponding elements and summing them."
+    },
+    {
+        "question": "What does a dot product value near zero imply?",
+        "options": [
+            "The two vectors point in a similar direction",
+            "The two vectors point in opposite directions",
+            "The two vectors are unrelated (geometrically perpendicular)",
+            "The two vectors are identical"
+        ],
+        "correct_answer": "The two vectors are unrelated (geometrically perpendicular)",
+        "motivation": "The text states: 'a value near zero means two vectors are geometrically perpendicular, aka **they are unrelated**.'"
+    },
+    {
+        "question": "What is the text's view on the Elixir programming language?",
+        "options": [
+            "It is a complex language that is not suitable for machine learning",
+            "It is a language that relies heavily on 'mutability' and classical 'loops'",
+            "It is a functional programming language that has no 'mutability' and uses recursion, which will be used for ML exercises",
+            "It is a language primarily used for statistical analysis and calculus"
+        ],
+        "correct_answer": "It is a functional programming language that has no 'mutability' and uses recursion, which will be used for ML exercises",
+        "motivation": "The text introduces Elixir as a 'functional programming language' that will 'enable us to do some hands-on machine learning exercises!' It specifically notes that 'Elixir has no *mutability*' and 'you won’t find “loops” in a classical sense: only recursion is accepted.'"
+    },
+    {
+        "question": "What is the formal definition of 'ML' provided in the text?",
+        "options": [
+            "The science of getting computers to act without being *explicitly* programmed",
+            "A method for finding a 'ground truth' function `f` that is perfectly accurate",
+            "A system for writing 'dumb by-hand rules' to classify data",
+            "The process of using a search engine to retrieve information"
+        ],
+        "correct_answer": "The science of getting computers to act without being *explicitly* programmed",
+        "motivation": "The text in 'Machine Learning 101' provides this exact definition: 'Machine Learning (ML) is the science of getting computers to act without being *explicitly* programmed.'"
+    },
+    {
+        "question": "In the 'ML in a nutshell' recipe, what is the third step?",
+        "options": [
+            "Fetch some data, call it 'training set'",
+            "Define a model, define its parameters, and run it on the training set",
+            "Tune the parameters, so that it minimizes the empirical error on the training set",
+            "Deploy the model to a production environment"
+        ],
+        "correct_answer": "Tune the parameters, so that it minimizes the empirical error on the training set",
+        "motivation": "The text summarizes 'Machine Learning, in a nutshell' in three steps. The third step is: 'Tune the parameters, so that it minimizes the empirical error on the training set.'"
+    },
+    {
+        "question": "In the car dealership example, what is the 'bias' in the linear model `predicted_price = weight * mileage + bias`?",
+        "options": [
+            "The parameter that controls the relationship between mileage and price",
+            "The empirical error of the model",
+            "The starting price of a car, or the predicted price when the mileage is zero",
+            "The 'small step' taken during gradient descent"
+        ],
+        "correct_answer": "The starting price of a car, or the predicted price when the mileage is zero",
+        "motivation": "In a linear model `y = mx + b`, the 'b' term (here, 'bias') is the y-intercept, which is the value of `y` when `x` is 0. In this context, it represents the predicted price (`y`) when the mileage (`x`) is 0."
+    },
+    {
+        "question": "In the car dealership example, what is the 'small step' (or learning rate) used for?",
+        "options": [
+            "It is the final `weight` parameter of the trained model",
+            "It is the `bias` parameter of the trained model",
+            "It controls how much the `weight` and `bias` are adjusted during each iteration of gradient descent",
+            "It is the Mean Squared Error of the model"
+        ],
+        "correct_answer": "It controls how much the `weight` and `bias` are adjusted during each iteration of gradient descent",
+        "motivation": "The text describes 'Step 3' of the gradient descent example as choosing a '“small step” to be `0.001`.' It's crucial because 'Too big, and we leap too far. Too small, and we won’t ever reach the minimum error.' This step value is used in 'Step 4' to update the parameters."
+    },
+    {
+        "question": "What is the key difference between Supervised and Unsupervised Learning?",
+        "options": [
+            "Supervised learning uses a 'reward' system, while Unsupervised learning does not",
+            "Supervised learning data is 'labeled' (has inputs and correct outputs), while Unsupervised learning data is 'unlabeled'",
+            "Supervised learning finds hidden patterns, while Unsupervised learning learns a mapping function",
+            "Supervised learning is used for LLMs, while Unsupervised learning is used for linear regression"
+        ],
+        "correct_answer": "Supervised learning data is 'labeled' (has inputs and correct outputs), while Unsupervised learning data is 'unlabeled'",
+        "motivation": "The text draws a clear line: 'Supervised Learning: When the data is labeled. Goal: To learn a mapping function...'. In contrast: 'Unsupervised Learning: The data is unlabeled. Goal: To find hidden structures and patterns...'"
+    },
+    {
+        "question": "In the Reinforcement Learning analogy, who is the 'Agent'?",
+        "options": [
+            "The human player",
+            "The set of rules for the game",
+            "The 'world' or 'game board' itself",
+            "The reward or 'Good boy!'"
+        ],
+        "correct_answer": "The human player",
+        "motivation": "The text provides an analogy for RL: 'You (Agent) are playing a video game (Environment). You press a button (Action) while at a certain screen (State). The game gives you points (Reward)...'"
+    },
+    {
+        "question": "In the core ML workflow, what is the 'Monitoring & Maintenance' step?",
+        "options": [
+            "The initial gathering of raw data",
+            "The process of cleaning and formatting data",
+            "The one-time deployment of the model",
+            "The ongoing process of tracking the model's performance in production and retraining it as needed"
+        ],
+        "correct_answer": "The ongoing process of tracking the model's performance in production and retraining it as needed",
+        "motivation": "The text lists 'Monitoring & Maintenance' as the final step in the workflow: 'Tracking the model’s performance in the real world. Over time, data can change... requiring the model to be retrained or updated.'"
+    },
+    {
+        "question": "What is the 'Transformer' in the context of LLMs?",
+        "options": [
+            "An early form of Symbolic AI from the 1960s",
+            "A type of RNN that uses a 'singleton memory'",
+            "The 2017 architecture introduced in 'Attention Is All You Need' that processes sentence context all at once using self-attention",
+            "The process of cleaning and transforming data before training"
+        ],
+        "correct_answer": "The 2017 architecture introduced in 'Attention Is All You Need' that processes sentence context all at once using self-attention",
+        "motivation": "The text identifies the 'Transformer' as the 'new architecture' from the 2017 paper 'Attention Is All You Need.' Its core idea is 'to process and find the entire sentence context at once' using 'self-attention.'"
+    },
+    {
+        "question": "What is the 'plausibility engine' vs 'truth engine' distinction meant to explain?",
+        "options": [
+            "Why LLMs are so accurate at retrieving facts",
+            "Why LLMs 'hallucinate' (they predict the next plausible token, not the next *true* token)",
+            "Why LLMs are vulnerable to prompt injections",
+            "Why LLMs have a knowledge cutoff"
+        ],
+        "correct_answer": "Why LLMs 'hallucinate' (they predict the next plausible token, not the next *true* token)",
+        "motivation": "The text uses this distinction to explain hallucinations: 'The LLM is not “lying”... its pre-trained model goal is to predict the next plausible token in a sequence... It is a “plausibility engine”, not a “truth engine”.'"
+    },
+    {
+        "question": "What is the text's advice for a human developer *before* using an LLM in the 'Agentic Phase'?",
+        "options": [
+            "To ask the LLM for a plan, then blindly trust it",
+            "To do the 'Human Phase' work first: provide sketches, tech constraints, and a product description",
+            "To write a long 'stream of consciousness' prompt with all your ideas",
+            "To use the LLM as a search engine to find the right code"
+        ],
+        "correct_answer": "To do the 'Human Phase' work first: provide sketches, tech constraints, and a product description",
+        "motivation": "The text introduces the 'Agentic Phase' as something that happens *after* the 'Human Phase.' The 'Human Phase' requires the human to 'provide a simple sketch,' define 'Tech constraints,' and write a 'Product (quick!) description' *before* the agent is asked to do work."
+    },
+    {
+        "question": "According to the text, what is a vector?",
+        "options": [
+            "A grid of numbers, like a spreadsheet",
+            "A cluster of common information that describes a single point of data",
+            "A mathematical operation that tells how aligned two points are",
+            "The rate of change of a function at a given point"
+        ],
+        "correct_answer": "A cluster of common information that describes a single point of data",
+        "motivation": "The source material defines a vector as a 'cluster of common information that describes a single point of data,' using the example of a student's attributes [19, 12, 88]. A grid of numbers is a matrix, an operation for alignment is a dot product, and the rate of change is a derivative."
+    },
+    {
+        "question": "What does a large, positive dot product between two vectors indicate?",
+        "options": [
+            "The vectors are unrelated and geometrically perpendicular",
+            "The vectors point in opposite directions and contrast each other",
+            "The vectors point in a similar direction",
+            "The vectors represent a spreadsheet of data"
+        ],
+        "correct_answer": "The vectors point in a similar direction",
+        "motivation": "The text states, 'a large, positive, dot product means the vectors point in a similar direction.' A value near zero means they are unrelated (perpendicular), and a large negative value means they point in opposite directions."
+    },
+    {
+        "question": "What is a matrix defined as in the source material?",
+        "options": [
+            "A list of numbers describing a single student",
+            "A fundamental operation that tells us how aligned two vectors are",
+            "A grid of numbers, like a spreadsheet, often representing a collection of data points",
+            "The multi-dimensional version of a derivative"
+        ],
+        "correct_answer": "A grid of numbers, like a spreadsheet, often representing a collection of data points",
+        "motivation": "The text explains that if you stack multiple vectors (like data for 100 students) together, you get a grid of numbers, which 'in math, is called a matrix.' It is compared to a spreadsheet."
+    },
+    {
+        "question": "In the context of calculus for ML, what does a derivative, `f'(x)`, tell you?",
+        "options": [
+            "The direction of the steepest ascent for a multi-dimensional function",
+            "The average value of a dataset",
+            "The rate of change or 'trend' of a function at any given point",
+            "How aligned two vectors are"
+        ],
+        "correct_answer": "The rate of change or 'trend' of a function at any given point",
+        "motivation": "The source material defines the derivative `f'(x)` as telling you the function's 'rate of change at any given point (geometrically, that’s simply its *slope*).' This helps understand the function's 'trend'."
+    },
+    {
+        "question": "What is the gradient (`∇f`) described as in the text?",
+        "options": [
+            "A function used to model errors as a 'hilly landscape'",
+            "The multi-dimensional version of a derivative",
+            "A collection of data points in a grid",
+            "A process that starts at a random point and steps downhill"
+        ],
+        "correct_answer": "The multi-dimensional version of a derivative",
+        "motivation": "The text explicitly states that the gradient, `∇f`, 'is the multi-dimensional version of a derivative.' It points in the direction of the steepest ascent."
+    },
+    {
+        "question": "In machine learning, what is the primary goal of optimization?",
+        "options": [
+            "To find the average and spread of the data",
+            "To stack vectors into a matrix",
+            "To minimize errors and maximize results",
+            "To ensure a system is deterministic"
+        ],
+        "correct_answer": "To minimize errors and maximize results",
+        "motivation": "The text describes optimization using the 'min-maxing' concept: 'We want to minimize the errors, *and* maximize results.' This is a core problem that optimization as a field addresses."
+    },
+    {
+        "question": "What is a 'loss function' in the context of ML optimization?",
+        "options": [
+            "A function that models the 'hilly landscape' of errors",
+            "A function that calculates the dot product of two vectors",
+            "The algorithm used to find the minimum error",
+            "A function that represents the 'ground truth'"
+        ],
+        "correct_answer": "A function that models the 'hilly landscape' of errors",
+        "motivation": "The text explains that to find the lowest valley (minimum error), 'we could model our errors as a function of that “hilly landscape”; we call such function a *loss function*.'"
+    },
+    {
+        "question": "What is the core idea of the Stochastic Gradient Descent algorithm?",
+        "options": [
+            "To analytically compute the exact optimal solution",
+            "To take a small step in the direction of the gradient (uphill)",
+            "To start at a random point, calculate the gradient, and take a small step in the opposite direction (downhill)",
+            "To perfectly fit a model to every single data point in the training set"
+        ],
+        "correct_answer": "To start at a random point, calculate the gradient, and take a small step in the opposite direction (downhill)",
+        "motivation": "The text outlines the Stochastic Gradient Descent algorithm as: 1. start at a random point, 2. calculate the gradient, and 3. take a small step in the *opposite* direction (downhill). This is repeated iteratively."
+    },
+    {
+        "question": "Which statistical measure is described as 'robust to outliers'?",
+        "options": [
+            "Mean",
+            "Median",
+            "Variance",
+            "Standard Deviation"
+        ],
+        "correct_answer": "Median",
+        "motivation": "The source material defines the 'Median' as 'The middle value when the data is sorted. More robust to outliers.' The Mean, in contrast, is 'Prone to being skewed by outliers.'"
+    },
+    {
+        "question": "What is the key characteristic of a stochastic system?",
+        "options": [
+            "The output is perfectly predictable from the input",
+            "The same input always leads to the same output",
+            "There is inherent randomness, and the same input can lead to different outputs",
+            "It represents the 'ground truth' mapping"
+        ],
+        "correct_answer": "There is inherent randomness, and the same input can lead to different outputs",
+        "motivation": "The text defines stochastic systems as having 'inherent randomness' where the 'same input can lead to different outputs.' In contrast, deterministic systems are perfectly predictable."
+    },
+    {
+        "question": "What core feature of Elixir programming is highlighted in the text?",
+        "options": [
+            "It uses classical 'loops' for iteration",
+            "It has no mutability, meaning variables can only be reassigned, not changed",
+            "It is primarily used for statistical analysis",
+            "It is a deterministic systems language"
+        ],
+        "correct_answer": "It has no mutability, meaning variables can only be reassigned, not changed",
+        "motivation": "The source states, 'Elixir has no *mutability*, meaning: you can’t really *change* variables, only *reassign* them.' It also notes that this is why it relies on recursion instead of classical loops."
+    },
+    {
+        "question": "What is the 'paradigm shift' of Machine Learning compared to Traditional Programming?",
+        "options": [
+            "In ML, the programmer figures out all the rules explicitly",
+            "In ML, the computer is provided with data and figures out the rules on its own",
+            "In ML, the goal is to create deterministic systems",
+            "In ML, programs are written in functional languages like Elixir"
+        ],
+        "correct_answer": "In ML, the computer is provided with data and figures out the rules on its own",
+        "motivation": "The text contrasts Traditional Programming, where 'The programmer figures out the rules,' with Machine Learning, where 'we provide the computer with data... The computer then figures out the rules on its own.'"
+    },
+    {
+        "question": "What does 'PAC' stand for in the context of ML models?",
+        "options": [
+            "Programming and Calculus",
+            "Pattern, Algorithm, Compute",
+            "Probably Approximately Correct",
+            "Prediction, Accuracy, Classification"
+        ],
+        "correct_answer": "Probably Approximately Correct",
+        "motivation": "The text introduces 'Probably Approximately Correct (PAC) models' as algorithms that 'work with high probability' and whose output 'might not be optimal,' combining 'approximately correct' heuristics with 'randomized' steps."
+    },
+    {
+        "question": "In the formal definition of machine learning, what is the 'prediction rule' or 'model'?",
+        "options": [
+            "The set of all possible objects, `X`",
+            "The set of all possible labels, `Y`",
+            "The set of training data, `S`",
+            "A function `h: X→Y` that predicts a label for a given object"
+        ],
+        "correct_answer": "A function `h: X→Y` that predicts a label for a given object",
+        "motivation": "The text states, 'A learner output is a prediction rule... a function that, given an object, tries to *predict* a... label.' It is mathematically written as `h: X→Y` and is called the ML model."
+    },
+    {
+        "question": "What is the 'empirical error'?",
+        "options": [
+            "The 'ground truth' error, which is impossible to compute",
+            "The error of the prediction rule `h` computed on the training set `S`",
+            "An error in the Elixir code",
+            "The error caused by using a linear model instead of a polynomial one"
+        ],
+        "correct_answer": "The error of the prediction rule `h` computed on the training set `S`",
+        "motivation": "The text explains that since we can't compute the 'perfect minimal error' (using the unknown `f`), we instead 'compute the error of `h` based on our training set `S`.' This is the empirical error."
+    },
+    {
+        "question": "In the car dealership example, what model was proposed as the *simplest* option?",
+        "options": [
+            "A high-degree polynomial model",
+            "A stochastic gradient descent model",
+            "A neural network model",
+            "A Linear Regression model"
+        ],
+        "correct_answer": "A Linear Regression model",
+        "motivation": "The text says, 'Let’s just propose the simplest model we can think of: Linear Regression.' The model's hypothesis is given as a straight line: `predicted_price = weight * mileage + bias`."
+    },
+    {
+        "question": "What is 'overfitting'?",
+        "options": [
+            "A model that is too simple to capture the underlying trend",
+            "The process of minimizing the Mean Squared Error (MSE)",
+            "When a model 'memorized' the training data, including its random noise, and fails to generalize",
+            "The use of a Linear Regression model for a complex problem"
+        ],
+        "correct_answer": "When a model 'memorized' the training data, including its random noise, and fails to generalize",
+        "motivation": "The text describes overfitting as when the model 'memorized the training data, and adapted way too much, aka including its random noise, instead of “learning the general trend”.' This leads to poor performance on new data."
+    },
+    {
+        "question": "What is the primary characteristic of Supervised Learning?",
+        "options": [
+            "The data is unlabeled, and the machine must find hidden structures",
+            "The machine learns by interacting with an environment and receiving rewards or penalties",
+            "The data is labeled, and the goal is to learn a mapping function from inputs to outputs",
+            "The machine uses a 'plausibility engine' to predict the next token"
+        ],
+        "correct_answer": "The data is labeled, and the goal is to learn a mapping function from inputs to outputs",
+        "motivation": "The source defines Supervised Learning as the case 'When the data is labeled,' and states its goal is 'To learn a mapping function from inputs (X) to outputs (Y).'"
+    },
+    {
+        "question": "What is the core task of 'Unsupervised Learning'?",
+        "options": [
+            "To predict a continuous value, like a house price",
+            "To learn from labeled 'ground truth' data",
+            "To find hidden structures or patterns in unlabeled data",
+            "To learn a policy through trial and error with rewards"
+        ],
+        "correct_answer": "To find hidden structures or patterns in unlabeled data",
+        "motivation": "The text states that in Unsupervised Learning, 'The data is unlabeled' and the 'Goal: To find hidden structures and patterns in data.' This is contrasted with Supervised Learning, which uses labeled data."
+    },
+    {
+        "question": "How is 'Reinforcement Learning' (RL) described?",
+        "options": [
+            "As a method for finding patterns in unlabeled data",
+            "As a method for learning a mapping from inputs (X) to outputs (Y)",
+            "As an 'agent' learning through trial and error by interacting with an environment to maximize a 'reward'",
+            "As a system that is perfectly predictable and involves no randomness"
+        ],
+        "correct_answer": "As an 'agent' learning through trial and error by interacting with an environment to maximize a 'reward'",
+        "motivation": "The text describes Reinforcement Learning as an 'Agent' that 'interacts with an Environment.' It 'learns by trial and error' based on 'Rewards' or 'Penalties' with the 'Goal: To learn the best “policy”... that maximizes its cumulative reward over time.'"
+    },
+    {
+        "question": "What is the 'garbage in, garbage out' (GIGO) principle in ML?",
+        "options": [
+            "The idea that ML models can fix bad data through optimization",
+            "The fact that the quality of an ML model's output is entirely dependent on the quality of its input data",
+            "A type of model used for sorting waste",
+            "The process of cleaning and preprocessing data"
+        ],
+        "correct_answer": "The fact that the quality of an ML model's output is entirely dependent on the quality of its input data",
+        "motivation": "The text introduces 'Garbage in, Garbage out' to mean 'the quality of your data *directly* determines the quality of your model.' If the input data is flawed, the model's predictions will be, too."
+    },
+    {
+        "question": "What is an example of 'Biased Data' given in the text?",
+        "options": [
+            "A sensor recording an impossible temperature",
+            "A customer dataset where half the age entries are blank",
+            "A hiring system trained on data where 90% of past hires were male, leading the model to favor male candidates",
+            "Including a student's 'shoe size' to predict their exam score"
+        ],
+        "correct_answer": "A hiring system trained on data where 90% of past hires were male, leading the model to favor male candidates",
+        "motivation": "The text provides this exact example for Biased Data: 'a hiring ML system uses data... where, historically, 90% of engineers hired were male: the model will likely learn that being male is a key characteristic... and will be biased against qualified female candidates.'"
+    },
+    {
+        "question": "In the core ML workflow, what is 'Preprocessing'?",
+        "options": [
+            "The final step where the model is put into a production environment",
+            "The step where the model 'learns' the patterns from data",
+            "Gathering the raw data from databases, APIs, or files",
+            "Cleaning, formatting, and transforming data into a usable state"
+        ],
+        "correct_answer": "Cleaning, formatting, and transforming data into a usable state",
+        "motivation": "The source material's 'core workflow' lists Preprocessing as the step that 'involves cleaning the data (handling missing values, removing duplicates), formatting it, and transforming it into a usable state.'"
+    },
+    {
+        "question": "What is the purpose of the 'validation set' in a training framework?",
+        "options": [
+            "It is the main dataset used to 'learn' the model parameters (like weights)",
+            "It is used for the final, one-time evaluation of the *best* model's performance",
+            "It is used to compare different models or tune hyperparameters, to see which model generalizes best",
+            "It is a dataset of 'ground truth' that is never used"
+        ],
+        "correct_answer": "It is used to compare different models or tune hyperparameters, to see which model generalizes best",
+        "motivation": "The text explains the validation set is used 'to *validate* which one [model] we should pick' and to tune 'hyperparameters.' It's for model selection, unlike the training set (for learning) or the test set (for final evaluation)."
+    },
+    {
+        "question": "What is the 'test set' used for?",
+        "options": [
+            "To train the model on the largest portion of data",
+            "To compare different models against each other to pick the best one",
+            "To provide a final, unbiased assessment of the *chosen* model's performance on unseen data",
+            "To find hidden patterns in unlabeled data"
+        ],
+        "correct_answer": "To provide a final, unbiased assessment of the *chosen* model's performance on unseen data",
+        "motivation": "The text states the test set is 'a final, held-back, *untouched* dataset.' It 'is used only *once*' to 'get a final, unbiased measure of how our *chosen* model... will perform in the real world.'"
+    },
+    {
+        "question": "In the car dealership example, what is the 'weight' in the linear model `predicted_price = weight * mileage + bias`?",
+        "options": [
+            "The starting price of all cars",
+            "A parameter that represents how much the price changes for each additional km of mileage",
+            "The average mileage of all cars in the dataset",
+            "The final predicted price of the car"
+        ],
+        "correct_answer": "A parameter that represents how much the price changes for each additional km of mileage",
+        "motivation": "In the linear regression model `predicted_price = weight * mileage + bias`, the 'weight' (or slope) determines the relationship between mileage and price. A negative weight, as in the example `-0.14`, means the price decreases by that amount for each unit increase in mileage."
+    },
+    {
+        "question": "What does the text identify as the main goal of a machine learning model, which differs from having a low training error?",
+        "options": [
+            "To achieve a training error of exactly zero",
+            "To create the most complex model possible, like a high-degree polynomial",
+            "To find a model `h` that performs well in real-world scenarios on new, unseen data",
+            "To perfectly memorize all the data points in the training set"
+        ],
+        "correct_answer": "To find a model `h` that performs well in real-world scenarios on new, unseen data",
+        "motivation": "The text explicitly states that 'having a low training error isn't our primary goal.' The overfitting example demonstrates that a zero-error model can be useless. The true goal is to 'find a model `h` so that it can perform nicely in real world scenarios' (generalization)."
+    },
+    {
+        "question": "In the formal definition of Reinforcement Learning, what is a 'policy'?",
+        "options": [
+            "The reward or penalty the agent receives",
+            "The agent's strategy for choosing an action based on the current state",
+            "The set of all possible states in the environment",
+            "The environment the agent interacts with"
+        ],
+        "correct_answer": "The agent's strategy for choosing an action based on the current state",
+        "motivation": "The text defines the 'Policy (π)' in Reinforcement Learning as the 'Agent’s strategy. This is a function that maps a state (S) to an action (A).' The agent's goal is to learn the *best* policy."
+    },
+    {
+        "question": "What is an example of 'Missing Data' provided in the text?",
+        "options": [
+            "A sensor recording -200°C in July",
+            "A hiring dataset that is 90% male",
+            "Customer information where half the entries for age are blank",
+            "A house listed with 10 square meters and 15 bedrooms"
+        ],
+        "correct_answer": "Customer information where half the entries for age are blank",
+        "motivation": "The text gives a specific example of Missing Data: 'customer information where half the entries for age are blank, while being interested in its purchasing habits.' The sensor and house examples relate to 'Incorrect or Inaccurate Data,' and the hiring example relates to 'Biased Data.'"
+    },
+    {
+        "question": "What is the purpose of 'K-Fold Cross-Validation'?",
+        "options": [
+            "To deploy the model to production",
+            "To gather the initial raw data",
+            "To get a more robust estimate of model performance and avoid bias from a single train/validation split",
+            "To clean and format the data before training"
+        ],
+        "correct_answer": "To get a more robust estimate of model performance and avoid bias from a single train/validation split",
+        "motivation": "The text explains that K-Fold Cross-Validation is used 'to get a more robust estimate' of a model's performance. It involves splitting the data into 'K' folds and training/evaluating the model 'K' times, each time using a different fold as the validation set, then averaging the results."
+    },
+    {
+        "question": "What 2017 Google paper introduced the 'Transformer' architecture, changing the field of LLMs?",
+        "options": [
+            "\"The Unreasonable Effectiveness of Recurrent Neural Networks\"",
+            "\"Attention Is All You Need\"",
+            "\"Deep Learning for Natural Language Processing\"",
+            "\"Reinforcement Learning from Human Feedback\""
+        ],
+        "correct_answer": "\"Attention Is All You Need\"",
+        "motivation": "The text identifies Phase 4 of LLM history as starting in 2017 with the Google paper titled '\"Attention Is All You Need\"'. This paper 'introduced a new architecture: the Transformer.'"
+    },
+    {
+        "question": "What is the core idea of 'self-attention' in the Transformer architecture?",
+        "options": [
+            "To process text one word at a time, keeping a 'singleton memory'",
+            "To break text down into numerical tokens",
+            "To figure out which words in a sentence are most important to which other words, processing the context all at once",
+            "To fine-tune the model on a specific, supervised task"
+        ],
+        "correct_answer": "To figure out which words in a sentence are most important to which other words, processing the context all at once",
+        "motivation": "The text explains that the Transformer's core idea was to 'process and find the entire sentence context at once.' The mechanism for this is 'self-attention,' and its 'job is to figure out which words are most important to which other words.'"
+    },
+    {
+        "question": "In an LLM architecture, what is 'Tokenization'?",
+        "options": [
+            "Looking up a token in a giant dictionary to get a 'Meaning Vector'",
+            "Training the model to predict the next token in a sequence",
+            "The process of breaking text down into numbers (tokens) that the model can read",
+            "Using human feedback to rank the model's outputs"
+        ],
+        "correct_answer": "The process of breaking text down into numbers (tokens) that the model can read",
+        "motivation": "The text describes 'Tokenization' as the first step in the LLM architecture: 'the model can't read “words”... We need to break text down into numbers. These are called “tokens”.'"
+    },
+    {
+        "question": "What is an 'Embedding' in the context of LLMs?",
+        "options": [
+            "The final output of the model after fine-tuning",
+            "The process of breaking text into tokens",
+            "A vector that represents a token's 'position' in a multi-dimensional 'concept space'",
+            "A security vulnerability where a user tricks the model"
+        ],
+        "correct_answer": "A vector that represents a token's 'position' in a multi-dimensional 'concept space'",
+        "motivation": "The text defines an 'embedding' as the step after tokenization. The model looks up each token in a table that 'simply contains *a vector* for each token. This vector represents the token's \"position\" in a multi-dimensional “concept space”.'"
+    },
+    {
+        "question": "What is 'Pre-training' in the LLM architecture?",
+        "options": [
+            "The final step where human feedback is used to refine the model's helpfulness",
+            "The main *unsupervised* learning phase where the model learns by predicting the next token in a massive dataset",
+            "The *supervised* learning phase where the model is trained on specific tasks like translation or summarization",
+            "The process of creating 'Meaning Vectors' (embeddings) for tokens"
+        ],
+        "correct_answer": "The main *unsupervised* learning phase where the model learns by predicting the next token in a massive dataset",
+        "motivation": "The text describes 'Pre-training' as 'the biggest, unsupervised, training step' where the model 'is fed *all* the data... Its only goal is to predict the next token.' This is contrasted with 'Fine-Tuning,' which is supervised."
+    },
+    {
+        "question": "What is 'RLHF' (Reinforcement Learning from Human Feedback)?",
+        "options": [
+            "The initial unsupervised training step on web-scale data",
+            "The process of breaking text into numerical tokens",
+            "A 2017 paper that introduced the Transformer architecture",
+            "A fine-tuning step where human rankings of model outputs are used to train a 'reward model' to make the LLM more helpful and aligned",
+            "A fine-tuning step where human rankings of model outputs are used to train a 'reward model' to make the LLM more helpful and aligned"
+        ],
+        "correct_answer": "A fine-tuning step where human rankings of model outputs are used to train a 'reward model' to make the LLM more helpful and aligned",
+        "motivation": "The text explains 'RLHF' as a step after 'Fine-Tuning.' It involves 'humans... ranking the outputs.' This data is used to 'train a *new* “reward model”' which is then used with Reinforcement Learning 'to make the LLM “better” (more helpful, less toxic, etc.).'"
+    },
+    {
+        "question": "How does the text define LLM 'Hallucinations'?",
+        "options": [
+            "A deliberate attempt by the LLM to deceive the user",
+            "The LLM admitting that it does not know an answer",
+            "When the LLM confidently produces factually incorrect information or makes up sources",
+            "A type of security attack to trick the model"
+        ],
+        "correct_answer": "When the LLM confidently produces factually incorrect information or makes up sources",
+        "motivation": "The text defines 'Hallucinations' as when an LLM 'will confidently... make up facts' or cite 'a non-existent book, paper or documentation bit.' It emphasizes that this is not 'lying' because the LLM has no intent, it's just a 'plausibility engine' generating a statistically likely (but factually incorrect) sequence."
+    },
+    {
+        "question": "Why does the text call an LLM a 'plausibility engine,' not a 'truth engine'?",
+        "options": [
+            "Because its primary goal is to retrieve factual information from a database",
+            "Because it is trained to predict the next plausible token in a sequence, not to verify the factual truth of its statements",
+            "Because it has a 'knowledge cutoff' and cannot access new information",
+            "Because it is designed to be a creative writing partner"
+        ],
+        "correct_answer": "Because it is trained to predict the next plausible token in a sequence, not to verify the factual truth of its statements",
+        "motivation": "The text explicitly states: 'Recall that its pre-trained model goal is to predict the next plausible token in a sequence. **That’s it**. It is a “plausibility engine”, not a “truth engine”.' This explains *why* hallucinations happen."
+    },
+    {
+        "question": "What is a 'Prompt Injection' attack?",
+        "options": [
+            "When an LLM hallucinates and provides incorrect code",
+            "When an LLM's knowledge is outdated due to its training cutoff",
+            "When a malicious user crafts input to trick the model into ignoring the developer's instructions and following new, hidden ones",
+            "The process of fine-tuning an LLM for a specific task"
+        ],
+        "correct_answer": "When a malicious user crafts input to trick the model into ignoring the developer's instructions and following new, hidden ones",
+        "motivation": "The text defines 'Prompt injection' as 'an attack where a malicious user crafts their input to trick the model into ignoring the developer's original instructions and following the user's new, hidden instructions instead.'"
+    },
+    {
+        "question": "According to the text, why are LLMs vulnerable to prompt injections?",
+        "options": [
+            "Because they have a knowledge cutoff",
+            "Because they are 'plausibility engines'",
+            "Because the LLM cannot fundamentally distinguish between instructions (from a developer) and data (from the user)",
+            "Because they are not trained with RLHF"
+        ],
+        "correct_answer": "Because the LLM cannot fundamentally distinguish between instructions (from a developer) and data (from the user)",
+        "motivation": "The text explains this vulnerability: '...the LLM cannot fundamentally distinguish between instructions (from a developer) and data (from the user). In the end, it's all just tokens.' This is the core reason the attack works."
+    },
+    {
+        "question": "What is the 'knowledge cutoff' of an LLM?",
+        "options": [
+            "The LLM's inability to understand complex topics",
+            "A security measure to prevent prompt injections",
+            "The fact that an LLM's knowledge is static and based on its pre-training data, which is from a specific point in the past",
+            "The LLM's tendency to hallucinate facts"
+        ],
+        "correct_answer": "The fact that an LLM's knowledge is static and based on its pre-training data, which is from a specific point in the past",
+        "motivation": "The text defines the 'knowledge cutoff' as the state that 'its knowledge is not live.' It is a 'static snapshot of the pre-training data' from 'some point in the past,' and 'the model won’t learn anything since.'"
+    },
+    {
+        "question": "What is 'automation bias' in the context of over-relying on LLMs?",
+        "options": [
+            "The LLM's bias towards certain topics based on its training data",
+            "The assumption that because the model is articulate and confident, it must be right",
+            "A type of prompt injection attack",
+            "The process of using an LLM to automate software development"
+        ],
+        "correct_answer": "The assumption that because the model is articulate and confident, it must be right",
+        "motivation": "The text describes 'automation bias' as a consequence of over-reliance: 'Because the model is so articulate and confident, we develop an “automation bias”: we just assume it’s right.' This is part of the 'ChatGPT told me so' problem."
+    },
+    {
+        "question": "What is the text's correction to the myth 'An LLM is just a fancier autocomplete'?",
+        "options": [
+            "This is correct; it is just a larger autocomplete.",
+            "An LLM's scale unlocks 'emergent abilities'—complex behaviors not explicitly programmed, like step-by-step reasoning or writing code.",
+            "An LLM is a 'truth engine,' not an autocomplete tool.",
+            "An LLM is an information retrieval system, which is different from autocomplete."
+        ],
+        "correct_answer": "An LLM's scale unlocks 'emergent abilities'—complex behaviors not explicitly programmed, like step-by-step reasoning or writing code.",
+        "motivation": "The text refutes this myth by stating it's an 'over-simplification.' It explains that 'emergent abilities' like 'step-by-step reasoning (chain-of-thought), writing functional code, and even passing standardized exams' appear 'once the models become large enough.' This makes them 'far more powerful and flexible than simple autocomplete.'"
+    },
+    {
+        "question": "How does the text differentiate a Search Engine from an LLM?",
+        "options": [
+            "They are the same; an LLM is just a better search engine.",
+            "A Search Engine is a 'generator tool' and an LLM is a 'search tool'.",
+            "A Search Engine is an 'Information Retrieval system' (finds *existing* info), while an LLM is an 'Information Generation system' (produces *new* tokens).",
+            "A Search Engine is vulnerable to hallucinations, while an LLM is not."
+        ],
+        "correct_answer": "A Search Engine is an 'Information Retrieval system' (finds *existing* info), while an LLM is an 'Information Generation system' (produces *new* tokens).",
+        "motivation": "The text makes this distinction very clear: 'A Search Engine... is an “Information Retrieval system”... finding **existing** information... An LLM is an Information Generation system. It produces **new** tokens out of previously seen ones.'"
+    },
+    {
+        "question": "According to the text, what is the *wrong* way to use an LLM that leads to hallucinations?",
+        "options": [
+            "Asking it to brainstorm creative ideas",
+            "Asking it to rewrite an email in a professional tone",
+            "Asking it to summarize an article",
+            "Using it to retrieve facts, asking a 'generator tool' to do the job of a 'search tool'"
+        ],
+        "correct_answer": "Using it to retrieve facts, asking a 'generator tool' to do the job of a 'search tool'",
+        "motivation": "The text explicitly concludes its comparison of search engines and LLMs with this warning: '**Using an LLM to retrieve facts is exactly what leads to hallucinations.** **You are asking a “generator tool” to do the job of a “search tool”.**'"
+    },
+    {
+        "question": "What does the 'C' stand for in the C.R.O.P. prompting framework?",
+        "options": [
+            "Code",
+            "Creativity",
+            "Context",
+            "Clarity"
+        ],
+        "correct_answer": "Context",
+        "motivation": "The text introduces the C.R.O.P. Framework as: **C**ontext, **R**ole, **O**bjective, **P**arameters. The 'C' stands for Context, defined as the 'background information we need to understand the “universe” of any statement.'"
+    },
+    {
+        "question": "What does the 'R' stand for in the C.R.O.P. prompting framework?",
+        "options": [
+            "Role",
+            "Reasoning",
+            "Retrieval",
+            "Response"
+        ],
+        "correct_answer": "Role",
+        "motivation": "The text introduces the C.R.O.P. Framework as: **C**ontext, **R**ole, **O**bjective, **P**arameters. The 'R' stands for Role, which 'heavily guides the model's tone and style.'"
+    },
+    {
+        "question": "What does the 'O' stand for in the C.R.O.P. prompting framework?",
+        "options": [
+            "Output",
+            "Objective",
+            "Optimization",
+            "Options"
+        ],
+        "correct_answer": "Objective",
+        "motivation": "The text introduces the C.R.O.P. Framework as: **C**ontext, **R**ole, **O**bjective, **P**arameters. The 'O' stands for Objective, which means 'state the deliverable you expect, clearly and directly.'"
+    },
+    {
+        "question": "What does the 'P' stand for in the C.R.O.P. prompting framework?",
+        "options": [
+            "Prompt",
+            "Product",
+            "Plausibility",
+            "Parameters"
+        ],
+        "correct_answer": "Parameters",
+        "motivation": "The text introduces the C.R.O.P. Framework as: **C**ontext, **R**ole, **O**bjective, **P**arameters. The 'P' stands for Parameters, which are 'additional **constraints**' that 'help deliver results more close to our request,' especially for coding."
+    },
+    {
+        "question": "In the 'bad prompt' example for the URL shortener, what was a key failure?",
+        "options": [
+            "The prompt was too short and did not provide enough detail",
+            "The prompt asked for a technical design plan instead of code",
+            "The prompt was a 'stream of consciousness' that lacked clear constraints and context (e.g., internal vs. public tool)",
+            "The prompt specified the wrong tech stack (Elixir and Phoenix)"
+        ],
+        "correct_answer": "The prompt was a 'stream of consciousness' that lacked clear constraints and context (e.g., internal vs. public tool)",
+        "motivation": "The text analyzes the 'bad prompt' as a 'long “stream of consciousness” prompt that *feels* detailed - but in reality is actually unfocused, lacks clear constraints... There’s no clear context: we’re not mentioning this shortener is an internal-use tool.'"
+    },
+    {
+        "question": "In the 'good prompt' example for the URL shortener, what was a key *deliverable* requested from the LLM?",
+        "options": [
+            "All the Elixir and Phoenix code for the controller and Ecto schema",
+            "A comprehensive technical design plan, including routes, schema, and logic, but *no* Elixir or Phoenix code",
+            "A long 'stream of consciousness' brain-dump about URL shorteners",
+            "A list of alternative tech stacks to use instead of Elixir"
+        ],
+        "correct_answer": "A comprehensive technical design plan, including routes, schema, and logic, but *no* Elixir or Phoenix code",
+        "motivation": "The 'good prompt' explicitly instructs the LLM to 'Provide a comprehensive technical design plan' and, crucially, 'Do not write any Elixir or Phoenix code.' The goal was to define the system's components *before* implementation."
+    },
+    {
+        "question": "In the proposed software development framework, what is the 'Human Phase'?",
+        "options": [
+            "The phase where the human blindly copies and pastes code from the LLM",
+            "The phase where the human provides the initial creative spark and the LLM does all the thinking and planning",
+            "The phase where the human *must think* and provide sketches, tech constraints, and a product description *before* asking the LLM to act",
+            "The phase where the human ranks the LLM's outputs for RLHF"
+        ],
+        "correct_answer": "The phase where the human *must think* and provide sketches, tech constraints, and a product description *before* asking the LLM to act",
+        "motivation": "The text emphasizes that to *properly* use LLMs, 'we must think, and quite a lot.' The 'Human Phase' involves the human expert doing upfront work: 'Research' (providing sketches/screenshots), defining 'Tech constraints,' and writing a 'Product (quick!) description.'"
+    },
+    {
+        "question": "In the 'Agentic Phase' of software development, what is the 'Product Owner Agent' tasked with doing?",
+        "options": [
+            "Writing the final Elixir and Phoenix code",
+            "Creating a detailed multi-step implementation plan for the IDE Agent",
+            "Taking the human's sketches and requirements and expanding them into a full 'PRD document' (Product Requirements Document)",
+            "Finding bugs in the human's 'tech constraints' document"
+        ],
+        "correct_answer": "Taking the human's sketches and requirements and expanding them into a full 'PRD document' (Product Requirements Document)",
+        "motivation": "The text describes the 'Product Owner Agent' step as feeding the human-generated documents to a 'deep think model' and asking for a '“product owner”-like document.' The output is a 'lengthy “PRD document” which explains our product, fully.'"
+    },
+    {
+        "question": "In the 'Agentic Phase', why is it important for the 'Software Development Agent' to create a *plan* before writing code?",
+        "options": [
+            "This step is not important and can be skipped",
+            "To give the human something to read while the LLM writes the code",
+            "Because the agent needs to 'connect the dots' and understand *how* to apply the 'what' (the PRD) to the existing codebase",
+            "To generate a .txt file, which is the only format the LLM can write to"
+        ],
+        "correct_answer": "Because the agent needs to 'connect the dots' and understand *how* to apply the 'what' (the PRD) to the existing codebase",
+        "motivation": "The text stresses the importance of this planning step: 'We’ve fed the “what”, and this planning step will formulate a “how”. This enables the Agent to read the whole codebase, and now it’s able to “connect the dots”. This can’t be done (properly) in just one step!'"
+    },
+    {
+        "question": "What is the final action the human is told to take after the 'Software Development Agent' creates its implementation plan?",
+        "options": [
+            "Immediately run the agent and let it code",
+            "Delete the plan and write the code yourself",
+            "**Read it.** And then edit or ask for changes *before* the agent implements them",
+            "Thank the agent and close the program"
+        ],
+        "correct_answer": "**Read it.** And then edit or ask for changes *before* the agent implements them",
+        "motivation": "The text is very explicit about this: 'Finally, we’ve asked your agent to save the output of the plan into an editable text file. **Read it.** Again, **don’t skip this step.** We can (finally) edit or ask for some changes *before* the agent implements those.'"
+    },
+    {
+        "question": "What core concept from calculus is used to find the 'direction of steepest ascent' in a multi-dimensional function?",
+        "options": [
+            "Dot Product",
+            "Matrix",
+            "Derivative",
+            "Gradient (∇f)"
+        ],
+        "correct_answer": "Gradient (∇f)",
+        "motivation": "The text defines the derivative `f'(x)` as the rate of change for a simple function. It then introduces the gradient `∇f` as 'the multi-dimensional version of a derivative' and states it 'is a vector that **points in the direction of the steepest ascent**.'"
+    },
+    {
+        "question": "Why does the Stochastic Gradient Descent algorithm take a step in the *opposite* direction of the gradient?",
+        "options": [
+            "To maximize the error function",
+            "To find the direction of steepest ascent (go uphill)",
+            "To minimize the error (loss function) by going 'downhill' in the 'hilly landscape' of errors",
+            "To move to a random point in the landscape"
+        ],
+        "correct_answer": "To minimize the error (loss function) by going 'downhill' in the 'hilly landscape' of errors",
+        "motivation": "The text explains the goal is to 'minimize errors' by finding the 'lowest valley' in the 'hilly landscape' (the loss function). Since the gradient 'points uphill,' the algorithm takes 'a small step in **the opposite direction** (aka: go downhill)' to move towards the minimum."
+    },
+    {
+        "question": "What is the text's definition of a 'deterministic' system?",
+        "options": [
+            "A system with inherent randomness",
+            "A system where the same input can lead to different outputs",
+            "A system where the output is perfectly predictable from the input and involves no randomness",
+            "A machine learning model that is 'Probably Approximately Correct'"
+        ],
+        "correct_answer": "A system where the output is perfectly predictable from the input and involves no randomness",
+        "motivation": "The text defines deterministic systems as: 'when the output *is perfectly predictable* from the input. No randomness is involved. The same input leads to the same output.'"
+    },
+    {
+        "question": "What is the formal definition of the 'training data' in machine learning?",
+        "options": [
+            "The prediction rule `h: X→Y`",
+            "The set of all possible objects, `X`",
+            "A set of pairs of 'objects / labels', mathematically `S = {(x1,y1), ..., (xm, ym}`",
+            "The 'ground truth' function, `f`"
+        ],
+        "correct_answer": "A set of pairs of 'objects / labels', mathematically `S = {(x1,y1), ..., (xm, ym}`",
+        "motivation": "The text's 'complete definition' of learning lists 'A set of “training data”... mathematically: **`S = {(x1,y1), ..., (xm, ym}`**' which contains 'pairs of “objects / labels”'."
+    },
+    {
+        "question": "What is the 'Mean Squared Error (MSE)' used for in the car dealership example?",
+        "options": [
+            "To measure the empirical error (training error) of the model",
+            "To set the initial random values for `weight` and `bias`",
+            "To calculate the gradient of the loss function",
+            "To define the 'small step' size in gradient descent"
+        ],
+        "correct_answer": "To measure the empirical error (training error) of the model",
+        "motivation": "The text states, 'To answer this question [How good is our computed model?], we need to measure its error on the data it was trained on. **That is the empirical error (or training error)**.' It then introduces Mean Squared Error (MSE) as 'A common way to measure it.'"
+    },
+    {
+        "question": "Why was the 4th-degree polynomial model in the car example 'perfect' on the training data but bad in practice?",
+        "options": [
+            "It was too simple and 'underfit' the data",
+            "It was a Linear Regression model in disguise",
+            "It had 'overfit' the data, memorizing its random noise instead of the general trend, leading to poor generalization",
+            "It failed to achieve a training error of zero"
+        ],
+        "correct_answer": "It had 'overfit' the data, memorizing its random noise instead of the general trend, leading to poor generalization",
+        "motivation": "The text explains this as the 'overfitting trap.' The model 'memorized the training data, and adapted way too much, aka **including its random noise**, instead of “learning the general trend”.' This caused it to make unreasonable predictions (like a negative price) on new data."
+    },
+    {
+        "question": "What is the key takeaway from the 'overfitting trap' example?",
+        "options": [
+            "Always use the most complex model possible to get the training error to zero",
+            "A low training error is the primary and most important goal of machine learning",
+            "Linear models are always better than polynomial models",
+            "A low training error does not guarantee good performance on new data; the goal is to generalize, not memorize"
+        ],
+        "correct_answer": "A low training error does not guarantee good performance on new data; the goal is to generalize, not memorize",
+        "motivation": "The text concludes this section by stating, 'This demonstrates that having a low training error isn't our primary goal.' The real goal is to 'find a model `h` so that it can perform nicely in real world scenarios,' which is the definition of generalization."
+    },
+    {
+        "question": "In the formal definition of Reinforcement Learning, what is the 'State (S)'?",
+        "options": [
+            "The agent's strategy or function",
+            "The reward the agent receives",
+            "A description of the environment at a specific moment",
+            "The action the agent chooses"
+        ],
+        "correct_answer": "A description of the environment at a specific moment",
+        "motivation": "The text's formal definitions for RL list 'State (S): A snapshot of the environment. E.g., the position of all pieces on a chessboard.'"
+    },
+    {
+        "question": "What is an example of 'Incorrect or Inaccurate Data' provided in the text?",
+        "options": [
+            "A hiring dataset that is 90% male",
+            "Customer information where half the age entries are blank",
+            "A sensor recording a temperature of -200°C in Udine in July",
+            "A dataset that is split into training, validation, and test sets"
+        ],
+        "correct_answer": "A sensor recording a temperature of -200°C in Udine in July",
+        "motivation": "The text provides this as a specific example of 'Incorrect or Inaccurate Data': 'a sensor records a temperature of -200°C in Udine, in July.' The hiring data is 'Biased Data' and the blank age entries are 'Missing Data.'"
+    },
+    {
+        "question": "What is the purpose of the 'Model Training' step in the core ML workflow?",
+        "options": [
+            "To clean, format, and transform the data",
+            "To gather raw data from various sources",
+            "To use the 'training set' to teach the model to find patterns and adjust its parameters",
+            "To deploy the model into a live production environment"
+        ],
+        "correct_answer": "To use the 'training set' to teach the model to find patterns and adjust its parameters",
+        "motivation": "The text describes the 'Model Training' step as the one where 'the model “learns”.' It specifies that 'The “training set” is used to actually learn the patterns and adjust the model’s parameters (like the `weight` and `bias`...)'"
+    },
+    {
+        "question": "In the core ML workflow, what is the 'Deployment' step?",
+        "options": [
+            "The process of cleaning and formatting data",
+            "The final, one-time evaluation of the model on the test set",
+            "The process of integrating the trained model into a real-world application or system",
+            "The process of splitting data into K-Folds for cross-validation"
+        ],
+        "correct_answer": "The process of integrating the trained model into a real-world application or system",
+        "motivation": "The text lists 'Deployment' as step 4 of the core workflow, describing it as 'Putting the model into a production environment (e.g., inside an app, on a server) where it can make predictions on new, real-world data.'"
+    },
+    {
+        "question": "What historical phase of LLMs is associated with RNNs (Recurrent Neural Networks) and LSTMs?",
+        "options": [
+            "Phase 1: Symbolic AI",
+            "Phase 2: Statistical",
+            "Phase 3: RNNs/LSTMs (Sequential)",
+            "Phase 4: The Transformer"
+        ],
+        "correct_answer": "Phase 3: RNNs/LSTMs (Sequential)",
+        "motivation": "The text's history of LLMs lists 'Phase 3: RNNs/LSTMs (Sequential)' and describes them as 'the first model types that could handle sequential data (like text) by using... a “memory” (or *state*).'"
+    },
+    {
+        "question": "What was the main limitation of RNNs that the Transformer architecture aimed to solve?",
+        "options": [
+            "RNNs could not process text sequentially",
+            "RNNs' sequential, one-word-at-a-time processing and 'singleton memory' was a bottleneck",
+            "RNNs were 'plausibility engines,' not 'truth engines'",
+            "RNNs were vulnerable to prompt injections"
+        ],
+        "correct_answer": "RNNs' sequential, one-word-at-a-time processing and 'singleton memory' was a bottleneck",
+        "motivation": "The text explains that the 2017 Transformer paper 'abandoned the previously adopted sequential approach of RNNs.' The Transformer's idea was 'instead of keeping a “singleton memory”, composed by reading input text one-word-at-a-time, to process and find the entire sentence context at once.'"
+    },
+    {
+        "question": "What is 'Fine-Tuning' in the LLM architecture?",
+        "options": [
+            "The initial unsupervised training on web-scale data",
+            "The process of breaking text into numerical tokens",
+            "A *supervised* training step on a smaller, specific dataset to teach the model a particular task (e.g., summarization)",
+            "The process of using human feedback to make the model 'safer'"
+        ],
+        "correct_answer": "A *supervised* training step on a smaller, specific dataset to teach the model a particular task (e.g., summarization)",
+        "motivation": "The text describes 'Fine-Tuning' as a step after pre-training. It is a 'supervised, training step' where the model is 'trained on a much smaller, *curated* dataset... for a *specific* task' (e.g., 'a dataset of questions and answers')."
+    },
+    {
+        "question": "According to the text, what is the myth about LLMs 'understanding' human language?",
+        "options": [
+            "LLMs truly understand the meaning and intent behind words, just like humans",
+            "LLMs 'understanding' is just a 'statistical map of which tokens are likely to follow other tokens' in a given context",
+            "LLMs' understanding comes from the 'Fine-Tuning' step, not the 'Pre-training' step",
+            "LLMs can only understand text, not code"
+        ],
+        "correct_answer": "LLMs 'understanding' is just a 'statistical map of which tokens are likely to follow other tokens' in a given context",
+        "motivation": "The text refutes the myth 'Can an LLM *understand* me?' by stating 'No.' It explains: 'It’s all about statistics... What we perceive as “understanding” is just an incredibly complex and massive statistical map of which tokens are likely to follow other tokens...'"
+    },
+    {
+        "question": "What is the key difference between 'information retrieval' and 'information generation'?",
+        "options": [
+            "Retrieval finds *existing* information, while generation produces *new* information (tokens)",
+            "Retrieval is what LLMs do, and generation is what search engines do",
+            "Retrieval is always factual, while generation is always fictional",
+            "There is no difference; they are two terms for the same process"
+        ],
+        "correct_answer": "Retrieval finds *existing* information, while generation produces *new* information (tokens)",
+        "motivation": "The text introduces these terms to contrast Search Engines and LLMs. A Search Engine (retrieval) is for 'finding **existing** information.' An LLM (generation) 'produces **new** tokens out of previously seen ones.'"
+    },
+    {
+        "question": "In the C.R.O.P. framework, what is the purpose of the 'Role' (R) parameter?",
+        "options": [
+            "To provide the background information and context of the request",
+            "To state the clear, unambiguous deliverable that is expected",
+            "To add constraints, such as 'output as JSON'",
+            "To guide the model's tone, style, and the knowledge-base it draws from (e.g., 'Act as a computer science professor')"
+        ],
+        "correct_answer": "To guide the model's tone, style, and the knowledge-base it draws from (e.g., 'Act as a computer science professor')",
+        "motivation": "The text explains the 'Role' parameter 'heavily guides the model's tone and style of the response.' It also suggests telling the LLM who *you* are to 'influence the “knowledge-base” it draws the attention from.'"
+    },
+    {
+        "question": "What is a 'PRD document' as described in the 'Agentic Phase' of software development?",
+        "options": [
+            "A file containing the final, production-ready code",
+            "A document defining the 'core software engineering principles'",
+            "A 'Product Requirements Document' that an LLM (acting as a Product Owner) expands from the human's initial sketches and notes",
+            "A text file containing the multi-step implementation plan from the 'Software Development Agent'"
+        ],
+        "correct_answer": "A 'Product Requirements Document' that an LLM (acting as a Product Owner) expands from the human's initial sketches and notes",
+        "motivation": "The text describes the 'Product Owner Agent' step's goal as creating a 'PRD document.' This is a 'lengthy “PRD document” which explains our product, fully,' generated *from* the human's inputs (sketches, constraints, description)."
+    },
+    {
+        "question": "What does the text mean by 'anthropomorphize' in the context of LLMs?",
+        "options": [
+            "To treat LLMs as simple autocomplete tools",
+            "To use LLMs for information retrieval instead of generation",
+            "To attribute human-like qualities such as 'thinks,' 'knows,' or 'understands' to LLMs",
+            "To use the C.R.O.P. framework for prompting"
+        ],
+        "correct_answer": "To attribute human-like qualities such as 'thinks,' 'knows,' or 'understands' to LLMs",
+        "motivation": "The text states, 'We, humans, are quite the egocentric beings. We tend to *anthropomorphize* everything. LLMs are no exception: we use wordings like “it thinks”, “it says”, “it lied” or “it understands me”.'"
+    },
+    {
+        "question": "In the 'Human Phase' of software development with LLMs, what is the 'Tech constraints' output?",
+        "options": [
+            "A full architecture document for the application, written by the human",
+            "A small 'structure document' explaining the human's 'core software engineering principles' (e.g., frameworks, libraries)",
+            "Sketches and screenshots of the desired result",
+            "A lengthy 'PRD document' written by the human"
+        ],
+        "correct_answer": "A small 'structure document' explaining the human's 'core software engineering principles' (e.g., frameworks, libraries)",
+        "motivation": "The text defines the 'Tech constraints' step as the human putting on the 'architect hat' to define 'languages, frameworks, libraries, core software principles.' The output is 'a small “structure document” explaining our “core software engineering principles”.'"
+    },
+    {
+        "question": "What is a dot product, as described in the text?",
+        "options": [
+            "A grid of numbers representing a dataset",
+            "The multi-dimensional version of a derivative",
+            "An operation that tells how aligned two vectors are, calculated by multiplying corresponding elements and summing the results",
+            "A cluster of common information describing a single data point"
+        ],
+        "correct_answer": "An operation that tells how aligned two vectors are, calculated by multiplying corresponding elements and summing the results",
+        "motivation": "The text defines a dot product as 'a fundamental operation that tells us *how aligned two vectors are*.' It provides an example, 'A⋅B = 1*3 + 2*4 = 11', which shows the process of multiplying corresponding elements and summing them."
+    },
+    {
+        "question": "What does a dot product value near zero imply?",
+        "options": [
+            "The two vectors point in a similar direction",
+            "The two vectors point in opposite directions",
+            "The two vectors are unrelated (geometrically perpendicular)",
+            "The two vectors are identical"
+        ],
+        "correct_answer": "The two vectors are unrelated (geometrically perpendicular)",
+        "motivation": "The text states: 'a value near zero means two vectors are geometrically perpendicular, aka **they are unrelated**.'"
+    },
+    {
+        "question": "What is the text's view on the Elixir programming language?",
+        "options": [
+            "It is a complex language that is not suitable for machine learning",
+            "It is a language that relies heavily on 'mutability' and classical 'loops'",
+            "It is a functional programming language that has no 'mutability' and uses recursion, which will be used for ML exercises",
+            "It is a language primarily used for statistical analysis and calculus"
+        ],
+        "correct_answer": "It is a functional programming language that has no 'mutability' and uses recursion, which will be used for ML exercises",
+        "motivation": "The text introduces Elixir as a 'functional programming language' that will 'enable us to do some hands-on machine learning exercises!' It specifically notes that 'Elixir has no *mutability*' and 'you won’t find “loops” in a classical sense: only recursion is accepted.'"
+    },
+    {
+        "question": "What is the formal definition of 'ML' provided in the text?",
+        "options": [
+            "The science of getting computers to act without being *explicitly* programmed",
+            "A method for finding a 'ground truth' function `f` that is perfectly accurate",
+            "A system for writing 'dumb by-hand rules' to classify data",
+            "The process of using a search engine to retrieve information"
+        ],
+        "correct_answer": "The science of getting computers to act without being *explicitly* programmed",
+        "motivation": "The text in 'Machine Learning 101' provides this exact definition: 'Machine Learning (ML) is the science of getting computers to act without being *explicitly* programmed.'"
+    },
+    {
+        "question": "In the 'ML in a nutshell' recipe, what is the third step?",
+        "options": [
+            "Fetch some data, call it 'training set'",
+            "Define a model, define its parameters, and run it on the training set",
+            "Tune the parameters, so that it minimizes the empirical error on the training set",
+            "Deploy the model to a production environment"
+        ],
+        "correct_answer": "Tune the parameters, so that it minimizes the empirical error on the training set",
+        "motivation": "The text summarizes 'Machine Learning, in a nutshell' in three steps. The third step is: 'Tune the parameters, so that it minimizes the empirical error on the training set.'"
+    },
+    {
+        "question": "In the car dealership example, what is the 'bias' in the linear model `predicted_price = weight * mileage + bias`?",
+        "options": [
+            "The parameter that controls the relationship between mileage and price",
+            "The empirical error of the model",
+            "The starting price of a car, or the predicted price when the mileage is zero",
+            "The 'small step' taken during gradient descent"
+        ],
+        "correct_answer": "The starting price of a car, or the predicted price when the mileage is zero",
+        "motivation": "In a linear model `y = mx + b`, the 'b' term (here, 'bias') is the y-intercept, which is the value of `y` when `x` is 0. In this context, it represents the predicted price (`y`) when the mileage (`x`) is 0."
+    },
+    {
+        "question": "In the car dealership example, what is the 'small step' (or learning rate) used for?",
+        "options": [
+            "It is the final `weight` parameter of the trained model",
+            "It is the `bias` parameter of the trained model",
+            "It controls how much the `weight` and `bias` are adjusted during each iteration of gradient descent",
+            "It is the Mean Squared Error of the model"
+        ],
+        "correct_answer": "It controls how much the `weight` and `bias` are adjusted during each iteration of gradient descent",
+        "motivation": "The text describes 'Step 3' of the gradient descent example as choosing a '“small step” to be `0.001`.' It's crucial because 'Too big, and we leap too far. Too small, and we won’t ever reach the minimum error.' This step value is used in 'Step 4' to update the parameters."
+    },
+    {
+        "question": "What is the key difference between Supervised and Unsupervised Learning?",
+        "options": [
+            "Supervised learning uses a 'reward' system, while Unsupervised learning does not",
+            "Supervised learning data is 'labeled' (has inputs and correct outputs), while Unsupervised learning data is 'unlabeled'",
+            "Supervised learning finds hidden patterns, while Unsupervised learning learns a mapping function",
+            "Supervised learning is used for LLMs, while Unsupervised learning is used for linear regression"
+        ],
+        "correct_answer": "Supervised learning data is 'labeled' (has inputs and correct outputs), while Unsupervised learning data is 'unlabeled'",
+        "motivation": "The text draws a clear line: 'Supervised Learning: When the data is labeled. Goal: To learn a mapping function...'. In contrast: 'Unsupervised Learning: The data is unlabeled. Goal: To find hidden structures and patterns...'"
+    },
+    {
+        "question": "In the Reinforcement Learning analogy, who is the 'Agent'?",
+        "options": [
+            "The human player",
+            "The set of rules for the game",
+            "The 'world' or 'game board' itself",
+            "The reward or 'Good boy!'"
+        ],
+        "correct_answer": "The human player",
+        "motivation": "The text provides an analogy for RL: 'You (Agent) are playing a video game (Environment). You press a button (Action) while at a certain screen (State). The game gives you points (Reward)...'"
+    },
+    {
+        "question": "In the core ML workflow, what is the 'Monitoring & Maintenance' step?",
+        "options": [
+            "The initial gathering of raw data",
+            "The process of cleaning and formatting data",
+            "The one-time deployment of the model",
+            "The ongoing process of tracking the model's performance in production and retraining it as needed"
+        ],
+        "correct_answer": "The ongoing process of tracking the model's performance in production and retraining it as needed",
+        "motivation": "The text lists 'Monitoring & Maintenance' as the final step in the workflow: 'Tracking the model’s performance in the real world. Over time, data can change... requiring the model to be retrained or updated.'"
+    },
+    {
+        "question": "What is the 'Transformer' in the context of LLMs?",
+        "options": [
+            "An early form of Symbolic AI from the 1960s",
+            "A type of RNN that uses a 'singleton memory'",
+            "The 2017 architecture introduced in 'Attention Is All You Need' that processes sentence context all at once using self-attention",
+            "The process of cleaning and transforming data before training"
+        ],
+        "correct_answer": "The 2017 architecture introduced in 'Attention Is All You Need' that processes sentence context all at once using self-attention",
+        "motivation": "The text identifies the 'Transformer' as the 'new architecture' from the 2017 paper 'Attention Is All You Need.' Its core idea is 'to process and find the entire sentence context at once' using 'self-attention.'"
+    },
+    {
+        "question": "What is the 'plausibility engine' vs 'truth engine' distinction meant to explain?",
+        "options": [
+            "Why LLMs are so accurate at retrieving facts",
+            "Why LLMs 'hallucinate' (they predict the next plausible token, not the next *true* token)",
+            "Why LLMs are vulnerable to prompt injections",
+            "Why LLMs have a knowledge cutoff"
+        ],
+        "correct_answer": "Why LLMs 'hallucinate' (they predict the next plausible token, not the next *true* token)",
+        "motivation": "The text uses this distinction to explain hallucinations: 'The LLM is not “lying”... its pre-trained model goal is to predict the next plausible token in a sequence... It is a “plausibility engine”, not a “truth engine”.'"
+    },
+    {
+        "question": "What is the text's advice for a human developer *before* using an LLM in the 'Agentic Phase'?",
+        "options": [
+            "To ask the LLM for a plan, then blindly trust it",
+            "To do the 'Human Phase' work first: provide sketches, tech constraints, and a product description",
+            "To write a long 'stream of consciousness' prompt with all your ideas",
+            "To use the LLM as a search engine to find the right code"
+        ],
+        "correct_answer": "To do the 'Human Phase' work first: provide sketches, tech constraints, and a product description",
+        "motivation": "The text introduces the 'Agentic Phase' as something that happens *after* the 'Human Phase.' The 'Human Phase' requires the human to 'provide a simple sketch,' define 'Tech constraints,' and write a 'Product (quick!) description' *before* the agent is asked to do work."
+    },
+    {
+        "question": "What is a 'heuristic' as defined in the source material?",
+        "options": [
+            "A perfect, analytical solution to a problem",
+            "A rule-of-thumb or an 'educated guess' used to find a good-enough solution when a perfect one is too hard or slow",
+            "The 'ground truth' function `f` in machine learning",
+            "A deterministic algorithm that always gives the same output"
+        ],
+        "correct_answer": "A rule-of-thumb or an 'educated guess' used to find a good-enough solution when a perfect one is too hard or slow",
+        "motivation": "The text defines 'Heuristics' as 'a rule-of-thumb, or a “educated guess”... when we are not interested in the *perfect* solution, but we just need a *good-enough* one... because the analytical (perfect) one would be too hard, or too slow.'"
+    },
+    {
+        "question": "In the 'ML in a nutshell' recipe, what is the first step?",
+        "options": [
+            "Define a model",
+            "Tune the parameters",
+            "Fetch some data, call it 'training set'",
+            "Deploy the model"
+        ],
+        "correct_answer": "Fetch some data, call it 'training set'",
+        "motivation": "The text provides a three-step 'recipe' for ML. The very first step is: 'Fetch some data, call it “training set” (`S`).'"
+    },
+    {
+        "question": "In the 'ML in a nutshell' recipe, what is the second step, after fetching data?",
+        "options": [
+            "Define a model, define its parameters, and run it on the training set",
+            "Tune the parameters to minimize error",
+            "Split the data into training, validation, and test sets",
+            "Gather the results and re-iterate"
+        ],
+        "correct_answer": "Define a model, define its parameters, and run it on the training set",
+        "motivation": "The text's three-step 'recipe' for ML lists the second step as: 'Define a model (`h`, e.g. a linear regression), define its parameters (`weight`, `bias`), and run it on `S`.'"
+    },
+    {
+        "question": "In the car dealership example, after '500 iterations' of gradient descent, what were the optimized parameters?",
+        "options": [
+            "`weight` = 0.5, `bias` = 10000",
+            "`weight` = -0.14, `bias` = 33125",
+            "`weight` = -0.25, `bias` = 20000",
+            "`weight` = 0.0, `bias` = 0.0"
+        ],
+        "correct_answer": "`weight` = -0.14, `bias` = 33125",
+        "motivation": "The text shows the result of the optimization process (Stochastic Gradient Descent) after 500 iterations: '`weight` = -0.14' and '`bias` = 33125'. This represents the learned model."
+    },
+    {
+        "question": "What is the 'Data Gathering' step in the core ML workflow?",
+        "options": [
+            "Cleaning and formatting the data",
+            "The first step, involving collecting raw data from sources like databases, APIs, or files",
+            "Splitting the data into training and test sets",
+            "Deploying the model to production"
+        ],
+        "correct_answer": "The first step, involving collecting raw data from sources like databases, APIs, or files",
+        "motivation": "The text lists 'Data Gathering' as the very first step (Step 1) of the 'core workflow' for an ML project. It is described as 'Gathering the raw data (from databases, APIs, files, etc.).'"
+    },
+    {
+        "question": "What was 'Phase 1: Symbolic AI' in the history of LLMs?",
+        "options": [
+            "The phase when the Transformer architecture was invented",
+            "The phase using RNNs and LSTMs for sequential data",
+            "The 1960s-1980s approach based on 'dumb by-hand rules' trying to model human 'common sense'",
+            "The phase using statistical models to find word relationships"
+        ],
+        "correct_answer": "The 1960s-1980s approach based on 'dumb by-hand rules' trying to model human 'common sense'",
+        "motivation": "The text describes 'Phase 1: Symbolic AI (1960s-1980s)' as the initial attempt 'to model the human “common sense”' using 'a *ton* of “dumb by-hand rules”.'"
+    },
+    {
+        "question": "What was 'Phase 2: Statistical' in the history of LLMs?",
+        "options": [
+            "The 1990s-2000s approach that 'ditched the rules' and used statistics to find word relationships",
+            "The 1960s approach using 'dumb by-hand rules'",
+            "The 2017+ phase using the Transformer architecture",
+            "The 2010s phase using RNNs and LSTMs"
+        ],
+        "correct_answer": "The 1990s-2000s approach that 'ditched the rules' and used statistics to find word relationships",
+        "motivation": "The text lists 'Phase 2: Statistical (1990s-2000s)' as the period that 'ditched the rules, and it was *all* about statistics: which word is close to which other one? Which word follows which one?'"
+    },
+    {
+        "question": "In the LLM Architecture, what is the 'Output' step?",
+        "options": [
+            "The 'Pre-training' step on a massive dataset",
+            "The process of breaking text into numerical tokens",
+            "The final step where the model generates the next token (word) based on all previous calculations",
+            "The 'Embedding' step where tokens are converted to 'Meaning Vectors'"
+        ],
+        "correct_answer": "The final step where the model generates the next token (word) based on all previous calculations",
+        "motivation": "The text's diagram of the LLM Architecture lists 'Output' as the final step (Step 6), which is the 'generation of the next token' after the pre-training, fine-tuning, and RLHF steps have been completed."
+    },
+    {
+        "question": "What is the 'ChatGPT told me so' problem described in the text?",
+        "options": [
+            "The fact that ChatGPT is always correct",
+            "A type of prompt injection attack",
+            "The problem of 'automation bias,' where users blindly trust an LLM's confident-sounding but incorrect output",
+            "The 'knowledge cutoff' that prevents LLMs from accessing new information"
+        ],
+        "correct_answer": "The problem of 'automation bias,' where users blindly trust an LLM's confident-sounding but incorrect output",
+        "motivation": "The text describes this problem under 'Over-reliance' and 'automation bias.' It says, 'Because the model is so articulate and confident, we develop an “automation bias”: we just assume it’s right. (“ChatGPT told me so”)... This is *dangerous*.'"
+    },
+    {
+        "question": "In the proposed software development framework, what happens in 'The results' step after the agent implements the plan?",
+        "options": [
+            "The project is finished and deployed immediately",
+            "The human developer must rewrite all the code from scratch",
+            "The human checks the results, and if something is not as expected, they 're-iterate the process'",
+            "The LLM automatically fires the human developer"
+        ],
+        "correct_answer": "The human checks the results, and if something is not as expected, they 're-iterate the process'",
+        "motivation": "The final step of the framework, 'The results', is described as checking the agent's implementation and tests. The text states: 'In case something doesn’t go the way you expected… Well, this is where you re-iterate the process.'"
+    },
+    {
+        "question": "What is the statistical 'Mean'?",
+        "options": [
+            "The middle value when data is sorted; robust to outliers",
+            "The 'average' of a dataset; prone to being skewed by outliers",
+            "How spread out the data is",
+            "The square root of the variance"
+        ],
+        "correct_answer": "The 'average' of a dataset; prone to being skewed by outliers",
+        "motivation": "The text defines 'Mean' in the 'Probability and Statistics' section as 'The “average”. Prone to being skewed by outliers.'"
+    },
+    {
+        "question": "What is the 'Variance' in statistics?",
+        "options": [
+            "The 'average' of a dataset",
+            "The middle value when data is sorted",
+            "A measure of how spread out the data is",
+            "The 'ground truth' error"
+        ],
+        "correct_answer": "A measure of how spread out the data is",
+        "motivation": "The text lists 'Variance' under its statistical definitions, explaining it as 'How spread out the data is.' It is listed alongside Standard Deviation, which is the square root of variance."
+    }
+]
