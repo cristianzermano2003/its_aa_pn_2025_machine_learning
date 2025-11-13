@@ -1,0 +1,16 @@
+{
+  "name": "quiz-app",
+  "version": "0.1.0",
+  "description": "Interactive quiz application",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cristianzermano2003/its_aa_pn_2025_machine_learning"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@phoenix/live-view": "^0.20.0",
+    "@phoenix/phoenix": "^1.8.0",
+    "esbuild": "^0.17.11",
+    "tailwindcss": "^3.3.5"
+  }
+}

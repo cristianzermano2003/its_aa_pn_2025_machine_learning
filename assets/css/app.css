@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+body {
+  @apply text-gray-900;
+}
+
+/* Phoenix flash messages */
+.alert {
+  @apply p-4 rounded-lg mb-4;
+}
+
+.alert.alert-info {
+  @apply bg-blue-50 border border-blue-200 text-blue-800;
+}
+
+.alert.alert-error {
+  @apply bg-red-50 border border-red-200 text-red-800;
+}
+
+/* Form styling */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+  @apply rounded border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+/* Loading indicator */
+.phx-loading {
+  @apply opacity-50;
+}

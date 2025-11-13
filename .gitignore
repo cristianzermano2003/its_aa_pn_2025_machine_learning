@@ -1,0 +1,44 @@
+# The directory Mix will write its output to.
+/_build/
+
+# The directory containing user-uploaded files.
+/priv/uploads
+
+# Ignore ecto create/drop/migrations tasks data
+/install
+
+# Generated on dependency resolution
+/mix.lock
+
+# The MIX_ENV file for overriding the environment, example: prod
+.env
+.env.*.local
+
+# Ignore Tailwind config in source
+/assets/tailwind.config.js
+
+# Ignore esbuild artifacts in source
+/assets/js/app.bundle.*
+
+# Generated on `mix phx.digest`
+/priv/static/
+
+# Files matching config/*.secret.exs pattern contain secrets
+/config/*.secret.exs
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+
+# npm/node
+/node_modules/
+/assets/node_modules/
+
+# Dependencies
+/deps/

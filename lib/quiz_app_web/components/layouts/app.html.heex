@@ -1,0 +1,18 @@
+<div class="min-h-screen flex flex-col">
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <h1 class="text-2xl font-bold text-gray-900">Quiz Application</h1>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
+    <.flash_group flash={@flash} />
+    <%= @inner_content %>
+  </main>
+
+  <footer class="bg-white border-t border-gray-200 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-center text-gray-600 text-sm">
+      <p>&copy; 2025 Quiz Application. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
